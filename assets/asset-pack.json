@@ -1,0 +1,361 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/background.jpg",
+                "type": "image",
+                "key": "background"
+            },
+            {
+                "url": "assets/images/background2.jpg",
+                "type": "image",
+                "key": "background2"
+            },
+            {
+                "url": "assets/images/Gameplay/Ball_Stage.png",
+                "type": "image",
+                "key": "Ball_Stage"
+            },
+            {
+                "url": "assets/images/pngwing.com (8) (1).png",
+                "type": "image",
+                "key": "barrier"
+            },
+            {
+                "url": "assets/images/pngwing.com (8) (2).png",
+                "type": "image",
+                "key": "barrier2"
+            },
+            {
+                "url": "assets/images/Gameplay/Basket.png",
+                "type": "image",
+                "key": "Basket"
+            },
+            {
+                "url": "assets/images/SplashScreen/BG.png",
+                "type": "image",
+                "key": "BG"
+            },
+            {
+                "url": "assets/images/Gameplay/BG.png",
+                "type": "image",
+                "key": "BG_1"
+            },
+            {
+                "url": "src/prefabs/BucketPrefab.js",
+                "type": "script",
+                "key": "BucketPrefab"
+            },
+            {
+                "url": "assets/images/—Pngtree—gold congratulations lettering graduate sticker_8530423 (2).png",
+                "type": "image",
+                "key": "congratsPng"
+            },
+            {
+                "url": "src/scripts/GameManager.js",
+                "type": "script",
+                "key": "GameManager"
+            },
+            {
+                "url": "assets/images/ResultAssets/Home_BTN.png",
+                "type": "image",
+                "key": "Home_BTN"
+            },
+            {
+                "url": "src/scripts/InputManager.js",
+                "type": "script",
+                "key": "InputManager"
+            },
+            {
+                "url": "assets/fonts/junglefeverMain.ttf",
+                "type": "binary",
+                "key": "junglefeverMain"
+            },
+            {
+                "url": "assets/images/ResultAssets/level-complete.png",
+                "type": "image",
+                "key": "level-complete"
+            },
+            {
+                "url": "assets/images/ResultAssets/Level-Completed.png",
+                "type": "image",
+                "key": "Level-Completed"
+            },
+            {
+                "url": "src/scripts/LevelManager.js",
+                "type": "script",
+                "key": "LevelManager"
+            },
+            {
+                "url": "assets/images/25746-6-play-button (1) (1).png",
+                "type": "image",
+                "key": "lnextLevelbtn"
+            },
+            {
+                "url": "assets/images/SplashScreen/logo.png",
+                "type": "image",
+                "key": "logo"
+            },
+            {
+                "url": "assets/images/Gameplay/happy_Ball.png",
+                "type": "image",
+                "key": "medicine-ball"
+            },
+            {
+                "url": "assets/images/Gameplay/Music_OFF.png",
+                "type": "image",
+                "key": "Music_OFF"
+            },
+            {
+                "url": "assets/images/Gameplay/Music_ON.png",
+                "type": "image",
+                "key": "Music_ON"
+            },
+            {
+                "url": "assets/images/ResultAssets/Next_BTN.png",
+                "type": "image",
+                "key": "Next_BTN"
+            },
+            {
+                "url": "assets/images/Gameplay/Obstacle_1.png",
+                "type": "image",
+                "key": "Obstacle_1"
+            },
+            {
+                "url": "assets/images/Gameplay/Obstacle_2.png",
+                "type": "image",
+                "key": "Obstacle_2"
+            },
+            {
+                "url": "assets/images/particalesImg.png",
+                "type": "image",
+                "key": "particalesImg"
+            },
+            {
+                "url": "assets/images/klipartz.com (1) (1).png",
+                "type": "image",
+                "key": "passThrough"
+            },
+            {
+                "url": "assets/images/pngimg.com - tennis_PNG10395 (2).png",
+                "type": "image",
+                "key": "passThroughBall"
+            },
+            {
+                "url": "assets/images/SplashScreen/preview.png",
+                "type": "image",
+                "key": "preview"
+            },
+            {
+                "url": "assets/images/Gameplay/Preview.png",
+                "type": "image",
+                "key": "Preview"
+            },
+            {
+                "url": "assets/images/replayBtn.png",
+                "type": "image",
+                "key": "replayBtn"
+            },
+            {
+                "url": "assets/images/Gameplay/Restart.png",
+                "type": "image",
+                "key": "Restart"
+            },
+            {
+                "url": "assets/images/Gameplay/Sad_Ball.png",
+                "type": "image",
+                "key": "Sad_Ball"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.49.43 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.49.43 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.50.17 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.50.17 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.51.01 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.51.01 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.51.38 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.51.38 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.51.57 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.51.57 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.52.15 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.52.15 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.57.27 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.57.27 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.57.44 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.57.44 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.58.27 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.58.27 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-19 at 2.58.55 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-19 at 2.58.55 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.45.53 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.45.53 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.46.32 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.46.32 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.46.54 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.46.54 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.47.08 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.47.08 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.47.18 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.47.18 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-23 at 4.47.35 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-23 at 4.47.35 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.45.42 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.45.42 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.47.06 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.47.06 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.47.17 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.47.17 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.47.26 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.47.26 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.47.37 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.47.37 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-25 at 2.48.11 PM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-25 at 2.48.11 PM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-26 at 10.44.11 AM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-26 at 10.44.11 AM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-26 at 10.44.20 AM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-26 at 10.44.20 AM"
+            },
+            {
+                "url": "assets/images/Screenshot 2023-10-26 at 10.44.37 AM.png",
+                "type": "image",
+                "key": "Screenshot 2023-10-26 at 10.44.37 AM"
+            },
+            {
+                "url": "src/scripts/SocketManager.js",
+                "type": "script",
+                "key": "SocketManager"
+            },
+            {
+                "url": "assets/images/Gameplay/Sound_OFF.png",
+                "type": "image",
+                "key": "Sound_OFF"
+            },
+            {
+                "url": "assets/images/Gameplay/Sound_ON.png",
+                "type": "image",
+                "key": "Sound_ON"
+            },
+            {
+                "url": "src/scripts/SoundManager.js",
+                "type": "script",
+                "key": "SoundManager"
+            },
+            {
+                "url": "assets/animations/SparkAnimation.json",
+                "type": "animation",
+                "key": "SparkAnimation"
+            },
+            {
+                "url": "assets/images/sparkle_effect-removebg-preview (1).png",
+                "frameConfig": {
+                    "frameWidth": 133,
+                    "frameHeight": 133,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "sprakSprite"
+            },
+            {
+                "url": "assets/images/ResultAssets/Star.png",
+                "type": "image",
+                "key": "Star"
+            },
+            {
+                "url": "assets/images/stick.png",
+                "type": "image",
+                "key": "stick"
+            },
+            {
+                "url": "assets/images/ResultAssets/tap_to_con..png",
+                "type": "image",
+                "key": "tap_to_con."
+            },
+            {
+                "url": "assets/images/ResultAssets/ui_base.png",
+                "type": "image",
+                "key": "ui_base"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

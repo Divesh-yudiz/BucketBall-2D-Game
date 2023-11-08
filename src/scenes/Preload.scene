@@ -1,0 +1,220 @@
+{
+    "id": "04331fb6-ed91-4d74-b6e9-4bfe0fcfb457",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadMethodName": "editorPreload",
+        "preloadPackFiles": [
+            "starter-template-basic-typescript/assets/asset-pack.json"
+        ],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Preload",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "b51a92c2-2b8e-4785-ab1b-45dc3b9fb013",
+            "label": "preview",
+            "components": [],
+            "texture": {
+                "key": "preview"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "0164a81e-1c59-4bac-93ee-fb980e9f1b80",
+            "label": "loading_Outside",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Progressbar_Base"
+            },
+            "x": 960,
+            "y": 963
+        },
+        {
+            "type": "Image",
+            "id": "b18084f4-9f72-4973-8c4e-2d54f5dd0e15",
+            "label": "inside",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Progressbar"
+            },
+            "x": 462,
+            "y": 959,
+            "originX": 0
+        },
+        {
+            "type": "Image",
+            "id": "a4fea25b-71c3-440b-850f-cc4cd837ac77",
+            "label": "logoSplash",
+            "components": [],
+            "texture": {
+                "key": "logoSplash"
+            },
+            "x": 960,
+            "y": 461
+        },
+        {
+            "type": "Ellipse",
+            "id": "3746cd32-0df0-4061-a0f1-a1e83dba830c",
+            "label": "ellipse",
+            "components": [],
+            "x": 1408,
+            "y": -109,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "22aaf4fc-2f5d-44f0-8eb2-23da8a878bae",
+            "label": "ellipse_2",
+            "components": [],
+            "x": 1681,
+            "y": -226,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "e20c35ae-1762-4ac1-9804-f39c22a91c96",
+            "label": "ellipse_3",
+            "components": [],
+            "x": 1244,
+            "y": 122,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "c8e2245e-eb2a-4bd3-95ab-88119e444358",
+            "label": "ellipse_4",
+            "components": [],
+            "x": 1894,
+            "y": -108,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "1eabbb8a-ec14-47af-82bd-293425f6df1b",
+            "label": "ellipse_5",
+            "components": [],
+            "x": 1143,
+            "y": 250,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "860fc7ca-69f3-4822-b92e-7021dbaa918b",
+            "label": "ellipse_6",
+            "components": [],
+            "x": 1050,
+            "y": 141,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "1aaeb0a1-bcf5-43c2-bc26-2f1f1f699e45",
+            "label": "ellipse_8",
+            "components": [],
+            "x": 891,
+            "y": 101,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "634b33a5-3ff1-4ad7-b1de-f5ae9d458d92",
+            "label": "ellipse_10",
+            "components": [],
+            "x": 743.3419894538283,
+            "y": 235.57375701783636,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Ellipse",
+            "id": "6bd2bf37-af6c-4437-9cc4-6788e85a061a",
+            "label": "ellipse_12",
+            "components": [],
+            "x": 710,
+            "y": 405,
+            "visible": false,
+            "isFilled": true,
+            "width": 50,
+            "height": 50
+        },
+        {
+            "type": "Image",
+            "id": "816c76e0-cbb2-4a7e-865a-739e85a514e4",
+            "label": "sad_Ball",
+            "components": [],
+            "texture": {
+                "key": "Sad_Ball"
+            },
+            "x": 1304,
+            "y": 685
+        },
+        {
+            "type": "Text",
+            "id": "af7a0245-bfee-451f-a1a6-4be6bd30963c",
+            "label": "startBtn",
+            "scope": "CLASS",
+            "components": [
+                "ScaleUpDown"
+            ],
+            "x": 960,
+            "y": 959,
+            "originX": 0.5,
+            "originY": 0.5,
+            "visible": false,
+            "text": "Tap to Start",
+            "align": "center",
+            "fontFamily": "junglefever",
+            "fontSize": "40px"
+        },
+        {
+            "type": "Image",
+            "id": "ca30a187-8e68-45ff-86e0-2c339e54fac2",
+            "label": "loadingEmoji",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "First_ball"
+            },
+            "x": 493,
+            "y": 961
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

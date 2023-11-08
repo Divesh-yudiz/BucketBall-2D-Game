@@ -1,0 +1,68 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/Progressbar/Center_ball.png",
+                "type": "image",
+                "key": "Center_ball"
+            },
+            {
+                "url": "assets/images/Progressbar/First_ball.png",
+                "type": "image",
+                "key": "First_ball"
+            },
+            {
+                "url": "assets/images/SplashScreen/happy_Ball.png",
+                "type": "image",
+                "key": "happy_Ball"
+            },
+            {
+                "url": "assets/images/Inside.png",
+                "type": "image",
+                "key": "Inside"
+            },
+            {
+                "url": "assets/fonts/junglefever.ttf",
+                "type": "binary",
+                "key": "junglefever"
+            },
+            {
+                "url": "assets/images/Progressbar/Last_ball.png",
+                "type": "image",
+                "key": "Last_ball"
+            },
+            {
+                "url": "assets/images/Loading-Outside.png",
+                "type": "image",
+                "key": "Loading-Outside"
+            },
+            {
+                "url": "assets/images/SplashScreen/logoSplash.png",
+                "type": "image",
+                "key": "logoSplash"
+            },
+            {
+                "url": "assets/images/Progressbar/Progressbar.png",
+                "type": "image",
+                "key": "Progressbar"
+            },
+            {
+                "url": "assets/images/Progressbar/Progressbar_Base.png",
+                "type": "image",
+                "key": "Progressbar_Base"
+            },
+            {
+                "url": "assets/images/SplashScreen/Sad_Ball.png",
+                "type": "image",
+                "key": "Sad_Ball"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
