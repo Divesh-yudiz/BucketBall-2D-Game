@@ -17,7 +17,7 @@ class Level extends Phaser.Scene {
 	editorCreate() {
 
 		// screenshot_2023_10_19_at_2_49_43_PM
-		this.add.image(960, 540, "BG_1");
+		this.add.image(960, 540, "Frame-");
 
 		// medicine_ball
 		const medicine_ball = this.add.image(332, 646, "medicine-ball");
@@ -66,7 +66,7 @@ class Level extends Phaser.Scene {
 		rectangle_1.isFilled = true;
 
 		// levelName
-		const levelName = this.add.text(960, 117, "", {});
+		const levelName = this.add.text(960, 26, "", {});
 		levelName.setOrigin(0.5, 0.5);
 		levelName.text = "L e v e l  1";
 		levelName.setStyle({ "fontFamily": "junglefeverMain", "fontSize": "40px" });
@@ -137,7 +137,7 @@ class Level extends Phaser.Scene {
 		const star2 = this.add.image(858, 409, "Star");
 		star2.scaleX = 0.8;
 		star2.scaleY = 0.8;
-		star2.angle = -12;
+		star2.angle = -12.000000000000002;
 		levelCompleteContainer.add(star2);
 
 		// star3
@@ -172,7 +172,7 @@ class Level extends Phaser.Scene {
 		const obstacle_1 = this.add.image(1665, 511, "Obstacle_1");
 		obstacle_1.scaleX = 1.5;
 		obstacle_1.scaleY = 1.2;
-		obstacle_1.angle = 24;
+		obstacle_1.angle = 24.000000000000004;
 		obstacle_1.visible = false;
 
 		// ball_Stage
@@ -183,7 +183,6 @@ class Level extends Phaser.Scene {
 
 		this.replayBtn = replayBtn;
 		this.levelName = levelName;
-		this.levelCompleteContainer = levelCompleteContainer;
 		this.sparkAnimation = sparkAnimation;
 		this.nextLevelbtn = nextLevelbtn;
 		this.levelNo = levelNo;
@@ -191,6 +190,7 @@ class Level extends Phaser.Scene {
 		this.star1 = star1;
 		this.star2 = star2;
 		this.star3 = star3;
+		this.levelCompleteContainer = levelCompleteContainer;
 
 		this.events.emit("scene-awake");
 	}
@@ -199,8 +199,6 @@ class Level extends Phaser.Scene {
 	replayBtn;
 	/** @type {Phaser.GameObjects.Text} */
 	levelName;
-	/** @type {Phaser.GameObjects.Container} */
-	levelCompleteContainer;
 	/** @type {Phaser.GameObjects.Rectangle} */
 	sparkAnimation;
 	/** @type {Phaser.GameObjects.Image} */
@@ -215,6 +213,8 @@ class Level extends Phaser.Scene {
 	star2;
 	/** @type {Phaser.GameObjects.Image} */
 	star3;
+	/** @type {Phaser.GameObjects.Container} */
+	levelCompleteContainer;
 
 	/* START-USER-CODE */
 
@@ -306,7 +306,7 @@ class Level extends Phaser.Scene {
 
 				if (this.passThroughCoordinates) {
 					// Create the passThrough object if it's present in the level
-					this.passThrough = this.add.image(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Obstacle_1")
+					this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "barrierSprite")
 						.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
 						.setAngle(this.passThroughCoordinates.angle)
 				}
@@ -316,7 +316,7 @@ class Level extends Phaser.Scene {
 		}
 
 		this.createBucket();
-		this.addListeners()
+		this.addListeners();
 
 		this.graphics = this.add.graphics({ lineStyle: { width: 2, color: 0x2266aa } });
 		this.arrowPath = new Phaser.Curves.Path(0, 0);
@@ -496,7 +496,8 @@ class Level extends Phaser.Scene {
 	}
 
 	starFun() {
-		console.log("hello")
+		// console.log("hello")
+		this.nextLevelbtn.disableInteractive();
 		this.sprakSprite.visible = true;
 		for (let i = 0; i < this.startArr.length; i++) {
 			this.startArr[i].visible = true;
@@ -518,11 +519,16 @@ class Level extends Phaser.Scene {
 							angle: { from: -270, to: -30 },
 							duration: 500,
 						});
+						if(i==2){
+							console.log("hello")
+							this.nextLevelbtn.setInteractive();
+						}
 					}
 				});
 			}, 500 * (i + 1));
 		}
 
+		// 
 		// function moveStar(obj){
 
 		// }
@@ -543,6 +549,7 @@ class Level extends Phaser.Scene {
 				// Handle collision
 				this.ball.passedthrough = true;
 				this.ball.setTexture("Sad_Ball")
+				this.sprakSprite.anims.play("Spark");
 			}
 		}
 

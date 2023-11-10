@@ -25,79 +25,54 @@ canvas {
 
 .cloud1 {
     position: absolute;
+    height: 50px;
+    width: 50px;
     top: -55px;
     opacity: 0.7;
     animation: linear infinite;
-    animation-name: cloud1;
-    animation-duration: 20s;
+    animation-name: bird-fly;
+    animation-duration: 10s;
     overflow: hidden;
 }
 
-@keyframes cloud1 {
+@keyframes bird-fly {
     0% {
-        left: 20%;
-    }
-
-    75% {
-        left: 105%;
-    }
-
-    76% {
-        left: 106%;
-        visibility: hidden;
-    }
-
-    79% {
-        left: -10%;
-        visibility: hidden;
-    }
-
-    80% {
-        left: -9%;
-        visibility: visible;
+        left: 0%;
+        top: 30%;
+        transform: rotateZ(-15deg) translateY(-5px);
     }
 
     100% {
-        left: 20%;
+        left: 100%;
+        top: 15%;
+        transform: rotateZ(5deg) translateY(15px);
     }
 }
+
 
 .cloud2 {
     position: absolute;
     top: 40%;
+    height: 70px;
+    width: 70px;
     opacity: 0.9;
     animation: linear infinite;
     animation-name: cloud2;
-    animation-duration: 35s;
+    animation-duration: 15s;
     overflow: hidden;
 }
 
 @keyframes cloud2 {
     0% {
-        left: 75%;
-    }
-
-    25% {
-        left: 105%;
-    }
-
-    26% {
-        left: 106%;
-        visibility: hidden;
-    }
-
-    27% {
-        left: -20%;
-        visibility: hidden;
-    }
-
-    28% {
-        left: -19%;
-        visibility: visible;
+        right: 0%;
+        top: 50%;
+        transform: scaleX(-1) rotateZ(-15deg) translateY(-5px);
     }
 
     100% {
-        left: 75%;
+        right: 100%;
+        top: 15%;
+        transform: scaleX(-1) rotateZ(5deg) translateY(15px);
     }
 }
 

@@ -1,12 +1,14 @@
 class SoundManager {
     constructor(oScene) {
         this.oScene = oScene;
+		this.jump=this.oScene.sound.add("jump");
+		this.transform=this.oScene.sound.add("transform");
     }
-    playSound(key, loop) {
+    play(key, loop) {
         key.play();
         key.loop = loop;
     }
-    stopSound(key, loop) {
+    stop(key, loop) {
         key.loop = loop
         key.stop();
     }

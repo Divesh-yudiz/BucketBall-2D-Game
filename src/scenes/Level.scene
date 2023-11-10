@@ -13,9 +13,8 @@
             "type": "Image",
             "id": "5cb1cddc-4396-442d-ad82-8bb1d31f6bed",
             "label": "screenshot_2023_10_19_at_2_49_43_PM",
-            "components": [],
             "texture": {
-                "key": "BG_1"
+                "key": "Frame-"
             },
             "x": 960,
             "y": 540
@@ -24,7 +23,6 @@
             "type": "Image",
             "id": "7610a94b-97e1-4aa6-975f-cae86558f51f",
             "label": "medicine_ball",
-            "components": [],
             "texture": {
                 "key": "medicine-ball"
             },
@@ -39,7 +37,6 @@
             "id": "5f8c1211-dbcb-4ba7-9b60-6ad2ae74b21c",
             "label": "replayBtn",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "Restart"
             },
@@ -50,7 +47,6 @@
             "type": "Image",
             "id": "07ed521c-83c5-4682-9f99-cc4c865e426a",
             "label": "basket",
-            "components": [],
             "texture": {
                 "key": "Basket"
             },
@@ -62,7 +58,6 @@
             "type": "Image",
             "id": "03794ddc-bd34-46e8-9546-8d2f9869fc6a",
             "label": "stick",
-            "components": [],
             "texture": {
                 "key": "stick"
             },
@@ -77,7 +72,6 @@
             "type": "Image",
             "id": "2199d397-7c56-49ad-802c-b0387feeb667",
             "label": "stick_1",
-            "components": [],
             "texture": {
                 "key": "stick"
             },
@@ -92,7 +86,6 @@
             "type": "Image",
             "id": "5c365cc4-2011-426c-822d-3c0338a92073",
             "label": "stick_2",
-            "components": [],
             "texture": {
                 "key": "stick"
             },
@@ -108,7 +101,6 @@
             "type": "Image",
             "id": "3c33b9c3-9f82-472a-ac9a-c168e074dc38",
             "label": "barrier",
-            "components": [],
             "texture": {
                 "key": "barrier2"
             },
@@ -122,7 +114,6 @@
             "type": "Rectangle",
             "id": "53b54b68-e9df-4fc3-893f-12336a31529d",
             "label": "rectangle_1",
-            "components": [],
             "x": 1137,
             "y": 873,
             "visible": false,
@@ -135,9 +126,8 @@
             "id": "8d521a56-034f-402d-aa6d-81baa3082d1d",
             "label": "levelName",
             "scope": "CLASS",
-            "components": [],
             "x": 960,
-            "y": 117,
+            "y": 26,
             "originX": 0.5,
             "originY": 0.5,
             "text": "L e v e l  1",
@@ -148,7 +138,6 @@
             "type": "Image",
             "id": "6413d2db-2330-42be-9b56-b3b8f9188565",
             "label": "barrier_1",
-            "components": [],
             "texture": {
                 "key": "barrier2"
             },
@@ -162,7 +151,6 @@
             "type": "Image",
             "id": "14401978-6d9c-46da-9886-0c0323454389",
             "label": "barrier_2",
-            "components": [],
             "texture": {
                 "key": "barrier2"
             },
@@ -177,14 +165,12 @@
             "id": "e4e77e07-28bd-44aa-ad23-ad62f374700d",
             "label": "levelCompleteContainer",
             "scope": "CLASS",
-            "components": [],
             "visible": false,
             "list": [
                 {
                     "type": "Image",
                     "id": "8f6535c4-af46-4cb2-8d32-0cc281be91cb",
                     "label": "level_complete",
-                    "components": [],
                     "texture": {
                         "key": "level-complete"
                     },
@@ -197,7 +183,6 @@
                     "id": "73ff3a17-12ef-45cb-ad6f-41e7c01ec585",
                     "label": "sparkAnimation",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 960,
                     "y": 540,
                     "isFilled": true,
@@ -210,7 +195,6 @@
                     "type": "Image",
                     "id": "0ed38514-edd6-4643-b2a8-46ecaab7de2e",
                     "label": "ui_base",
-                    "components": [],
                     "texture": {
                         "key": "ui_base"
                     },
@@ -222,7 +206,6 @@
                     "id": "121cca35-829e-4e0a-b3e4-70e92354d310",
                     "label": "nextLevelbtn",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "Next_BTN"
                     },
@@ -233,7 +216,6 @@
                     "type": "Image",
                     "id": "739fa0c7-98dc-43ab-b5ac-2a49314a309c",
                     "label": "home_BTN",
-                    "components": [],
                     "texture": {
                         "key": "Home_BTN"
                     },
@@ -244,7 +226,6 @@
                     "type": "Text",
                     "id": "1d2f87e7-2cda-4b1b-8c9c-7b3d5d50c72d",
                     "label": "levelFinishedText",
-                    "components": [],
                     "x": 973,
                     "y": 500,
                     "originX": 0.5,
@@ -260,7 +241,6 @@
                     "id": "7e72e4b5-4038-462e-836e-f7d6d508ccbb",
                     "label": "levelNo",
                     "scope": "CLASS",
-                    "components": [],
                     "x": 964,
                     "y": 550,
                     "originX": 0.5,
@@ -275,7 +255,6 @@
                     "id": "f623452e-9df4-4ea3-b4e3-c2e191aaecab",
                     "label": "sprakSprite",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "sprakSprite",
                         "frame": 0
@@ -288,7 +267,6 @@
                     "id": "8aa132a7-41a4-44f6-844b-4386183c3f05",
                     "label": "star1",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "Star"
                     },
@@ -300,7 +278,6 @@
                     "id": "85f9f8e9-8adf-4f7c-b3c3-505284413476",
                     "label": "star2",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "Star"
                     },
@@ -308,14 +285,13 @@
                     "y": 409,
                     "scaleX": 0.8,
                     "scaleY": 0.8,
-                    "angle": -12
+                    "angle": -12.000000000000002
                 },
                 {
                     "type": "Image",
                     "id": "5e36dab0-f427-448b-ac4c-4e6330a81b9e",
                     "label": "star3",
                     "scope": "CLASS",
-                    "components": [],
                     "texture": {
                         "key": "Star"
                     },
@@ -329,7 +305,6 @@
                     "type": "Image",
                     "id": "800bfb6d-6ee1-47ba-8a82-927dd617dcde",
                     "label": "level_Completed",
-                    "components": [],
                     "texture": {
                         "key": "Level-Completed"
                     },
@@ -356,7 +331,6 @@
             "type": "Image",
             "id": "7b68f973-e7b4-41e8-a9ed-c395e27def87",
             "label": "obstacle_2",
-            "components": [],
             "texture": {
                 "key": "Obstacle_2"
             },
@@ -371,7 +345,6 @@
             "type": "Image",
             "id": "ae5e86cc-512c-49f3-8e09-268955192881",
             "label": "obstacle",
-            "components": [],
             "texture": {
                 "key": "Obstacle_2"
             },
@@ -385,7 +358,6 @@
             "type": "Image",
             "id": "ef91d8df-32f8-472c-be1d-3d4f6058b786",
             "label": "obstacle_1",
-            "components": [],
             "texture": {
                 "key": "Obstacle_1"
             },
@@ -393,14 +365,13 @@
             "y": 511,
             "scaleX": 1.5,
             "scaleY": 1.2,
-            "angle": 24,
+            "angle": 24.000000000000004,
             "visible": false
         },
         {
             "type": "Image",
             "id": "da02c351-44c5-4d08-9e98-56ebedc9390c",
             "label": "ball_Stage",
-            "components": [],
             "texture": {
                 "key": "Ball_Stage"
             },
@@ -413,6 +384,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

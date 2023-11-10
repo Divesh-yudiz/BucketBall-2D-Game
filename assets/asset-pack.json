@@ -2,6 +2,26 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/Gameplay/bubbles/1.png",
+                "type": "image",
+                "key": "1"
+            },
+            {
+                "url": "assets/images/Gameplay/bubbles/2.png",
+                "type": "image",
+                "key": "2"
+            },
+            {
+                "url": "assets/images/Gameplay/bubbles/3.png",
+                "type": "image",
+                "key": "3"
+            },
+            {
+                "url": "assets/images/Gameplay/bubbles/4.png",
+                "type": "image",
+                "key": "4"
+            },
+            {
                 "url": "assets/images/background.jpg",
                 "type": "image",
                 "key": "background"
@@ -25,6 +45,24 @@
                 "url": "assets/images/pngwing.com (8) (2).png",
                 "type": "image",
                 "key": "barrier2"
+            },
+            {
+                "url": "assets/animations/BarrierAnimations.json",
+                "type": "animation",
+                "key": "BarrierAnimations"
+            },
+            {
+                "url": "assets/images/Gameplay/spritesheet (2).png",
+                "frameConfig": {
+                    "frameWidth": 84,
+                    "frameHeight": 328,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "barrierSprite"
             },
             {
                 "url": "assets/images/Gameplay/Basket.png",
@@ -52,6 +90,11 @@
                 "key": "congratsPng"
             },
             {
+                "url": "assets/images/Frame-.png",
+                "type": "image",
+                "key": "Frame-"
+            },
+            {
                 "url": "src/scripts/GameManager.js",
                 "type": "script",
                 "key": "GameManager"
@@ -65,6 +108,13 @@
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
+            },
+            {
+                "url": [
+                    "assets/sounds/jump.mp3"
+                ],
+                "type": "audio",
+                "key": "jump"
             },
             {
                 "url": "assets/fonts/junglefeverMain.ttf",
@@ -343,6 +393,13 @@
                 "url": "assets/images/ResultAssets/tap_to_con..png",
                 "type": "image",
                 "key": "tap_to_con."
+            },
+            {
+                "url": [
+                    "assets/sounds/transform.mp3"
+                ],
+                "type": "audio",
+                "key": "transform"
             },
             {
                 "url": "assets/images/ResultAssets/ui_base.png",
