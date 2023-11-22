@@ -42,6 +42,41 @@
                 "key": "barrier"
             },
             {
+                "url": "assets/images/Barrier/Barrier-1.png",
+                "type": "image",
+                "key": "Barrier-1"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-2.png",
+                "type": "image",
+                "key": "Barrier-2"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-3.png",
+                "type": "image",
+                "key": "Barrier-3"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-4.png",
+                "type": "image",
+                "key": "Barrier-4"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-5.png",
+                "type": "image",
+                "key": "Barrier-5"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-6.png",
+                "type": "image",
+                "key": "Barrier-6"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-7.png",
+                "type": "image",
+                "key": "Barrier-7"
+            },
+            {
                 "url": "assets/images/pngwing.com (8) (2).png",
                 "type": "image",
                 "key": "barrier2"

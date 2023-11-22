@@ -229,7 +229,7 @@ class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-
+		this.activateNextLevelbtn = false;
 		this.isDrag = false;
 
 		this.levelManager = new LevelManager(this);
@@ -240,7 +240,7 @@ class Level extends Phaser.Scene {
 	createGameScene() {
 		this.gameOn = true;
 		this.levelName.setText(`Level ${this.level}`)
-
+		this.activateNextLevelbtn == false
 
 		if (this.level == 1) {
 			this.ball = this.matter.add.image(332, 646, "medicine-ball").setCircle(32)
@@ -306,7 +306,7 @@ class Level extends Phaser.Scene {
 
 				if (this.passThroughCoordinates) {
 					// Create the passThrough object if it's present in the level
-					this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "barrierSprite")
+					this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
 						.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
 						.setAngle(this.passThroughCoordinates.angle)
 				}
@@ -424,8 +424,13 @@ class Level extends Phaser.Scene {
 				this.ball.setStatic(true);
 				this.ball.setVelocity(0, 0)
 				this.ball.setInteractive();
-				if (this.passThrough) {
+				if (this.ball.passedthrough == false) {
 					console.log("setting ball to false")
+					if (this.passThroughCoordinates) {
+						this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
+							.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
+							.setAngle(this.passThroughCoordinates.angle)
+					}
 					this.ball.passedthrough = false;
 				}
 				this.ball.setTexture("medicine-ball")
@@ -477,6 +482,13 @@ class Level extends Phaser.Scene {
 				this.ball.setVelocity(0, 0)
 				this.count = false
 				this.ball.passedthrough = false;
+				if (this.passThrough) {
+					if (this.passThroughCoordinates) {
+						this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
+							.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
+							.setAngle(this.passThroughCoordinates.angle)
+					}
+				}
 				this.ball.setInteractive();
 				this.ball.setTexture("medicine-ball")
 			}
@@ -519,9 +531,9 @@ class Level extends Phaser.Scene {
 							angle: { from: -270, to: -30 },
 							duration: 500,
 						});
-						if(i==2){
-							console.log("hello")
-							this.nextLevelbtn.setInteractive();
+						if (i >= 2) {
+							console.log("button activated after star animation")
+							this.activateNextLevelbtn = true
 						}
 					}
 				});
@@ -536,6 +548,7 @@ class Level extends Phaser.Scene {
 
 
 	update() {
+		console.log(this.activateNextLevelbtn)
 		// console.log("ball pass through", this.ball.passThrough)
 		if (this.ball) {
 			this.checkBallOutsideOrInside()
@@ -550,6 +563,12 @@ class Level extends Phaser.Scene {
 				this.ball.passedthrough = true;
 				this.ball.setTexture("Sad_Ball")
 				this.sprakSprite.anims.play("Spark");
+				this.passThrough.anims.play("barrierAnim")
+					.on('complete', () => {
+						console.log("hello")
+						this.passThrough.visible = false;
+					});
+
 			}
 		}
 
@@ -573,25 +592,34 @@ class Level extends Phaser.Scene {
 				// this.visibleContainer();
 				this.levelCompleteContainer.setDepth(5);
 				this.levelNo.setText(this.level)
-				this.nextLevelbtn.setInteractive().once("pointerup", () => {
-					this.bucketLeft.destroy();
-					this.bucketRight.destroy();
-					this.bucketBottom.destroy();
-					this.bucket.destroy();
-					this.winObj.destroy();
-					if (this.levelManager.levels[this.level].obstacleCount) {
-						this.obstacleAray.forEach((obj) => {
-							obj.destroy();
-						})
-					}
-					this.ball.passedthrough = false;
-					this.level += 1;
-					this.createGameScene();
-					this.ball.x = 332;
-					this.ball.y = 646;
-					this.levelCompleteContainer.visible = false
-					this.isGameOn = true
-				})
+				console.log("checking condition : ", this.activateNextLevelbtn == true)
+				if (this.activateNextLevelbtn == true) {
+					console.log("condition satified..")
+					this.nextLevelbtn.setInteractive().once("pointerup", () => {
+						// if (this.activateNextLevelbtn == true) {
+						console.log("next level button clicked")
+						// this.activateNextLevelbtn == false
+						this.bucketLeft.destroy();
+						this.bucketRight.destroy();
+						this.bucketBottom.destroy();
+						this.bucket.destroy();
+						this.winObj.destroy();
+						if (this.levelManager.levels[this.level].obstacleCount) {
+							this.obstacleAray.forEach((obj) => {
+								obj.destroy();
+							})
+						}
+						this.ball.passedthrough = false;
+						this.level += 1;
+						this.createGameScene();
+						this.ball.x = 332;
+						this.ball.y = 646;
+						this.levelCompleteContainer.visible = false
+						this.isGameOn = true
+
+						// }
+					})
+				}
 			} else if (this.passThroughCoordinates && this.ball.passedthrough == true && this.isGameOn == true) {
 				this.isGameOn = false
 				console.log("when the pass through is present ", this.ball)
@@ -605,29 +633,36 @@ class Level extends Phaser.Scene {
 				// this.visibleContainer();
 				this.levelCompleteContainer.setDepth(5);
 				this.levelNo.setText(this.level)
-				this.nextLevelbtn.setInteractive().once("pointerup", () => {
-					this.bucketLeft.destroy();
-					this.bucketRight.destroy();
-					this.bucketBottom.destroy();
-					this.bucket.destroy();
-					this.winObj.destroy();
-					if (this.levelManager.levels[this.level].obstacleCount) {
-						this.obstacleAray.forEach((obj) => {
-							obj.destroy();
-						})
-					}
-					if (this.levelManager.levels[this.level].passThrough) {
-						this.ball.passedthrough = false;
-						this.passThrough.destroy();
-						this.level += 1;
-					}
-					this.createGameScene();
-					this.ball.x = 332;
-					this.ball.y = 646;
-					this.ball.setTexture("medicine-ball")
-					this.levelCompleteContainer.visible = false
-					this.isGameOn = true
-				});
+				
+				if (this.activateNextLevelbtn == true) {
+					console.log("condition satified..")
+					this.nextLevelbtn.setInteractive().once("pointerup", () => {
+						// if(this.activateNextLevelbtn == true){
+						console.log("next level button clicked")
+						this.bucketLeft.destroy();
+						this.bucketRight.destroy();
+						this.bucketBottom.destroy();
+						this.bucket.destroy();
+						this.winObj.destroy();
+						if (this.levelManager.levels[this.level].obstacleCount) {
+							this.obstacleAray.forEach((obj) => {
+								obj.destroy();
+							})
+						}
+						if (this.levelManager.levels[this.level].passThrough) {
+							this.ball.passedthrough = false;
+							this.passThrough.destroy();
+							this.level += 1;
+						}
+						this.createGameScene();
+						this.ball.x = 332;
+						this.ball.y = 646;
+						this.ball.setTexture("medicine-ball")
+						this.levelCompleteContainer.visible = false
+						this.isGameOn = true
+						// }
+					});
+				}
 			} else {
 				// console.log("not going either both ", this.ball)
 			}
