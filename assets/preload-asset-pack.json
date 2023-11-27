@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/bucketBoundary.png",
+                "type": "image",
+                "key": "bucketBoundary"
+            },
+            {
                 "url": "assets/images/Progressbar/Center_ball.png",
                 "type": "image",
                 "key": "Center_ball"

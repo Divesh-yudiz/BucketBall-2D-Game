@@ -27,6 +27,8 @@ class Level extends Phaser.Scene {
 
 		// replayBtn
 		const replayBtn = this.add.image(121, 97, "Restart");
+		replayBtn.scaleX = 0.9;
+		replayBtn.scaleY = 0.9;
 
 		// basket
 		const basket = this.add.image(1432, 821, "Basket");
@@ -107,19 +109,19 @@ class Level extends Phaser.Scene {
 		const nextLevelbtn = this.add.image(1050, 637, "Next_BTN");
 		levelCompleteContainer.add(nextLevelbtn);
 
-		// home_BTN
-		const home_BTN = this.add.image(869, 637, "Home_BTN");
-		levelCompleteContainer.add(home_BTN);
+		// homeBtn
+		const homeBtn = this.add.image(869, 637, "Home_BTN");
+		levelCompleteContainer.add(homeBtn);
 
 		// levelFinishedText
 		const levelFinishedText = this.add.text(973, 500, "", {});
 		levelFinishedText.setOrigin(0.5, 0.5);
 		levelFinishedText.text = "Level Finished";
-		levelFinishedText.setStyle({ "align": "center", "color": "#bd9a2a", "fontFamily": "junglefever", "fontSize": "25px" });
+		levelFinishedText.setStyle({ "align": "center", "color": "#bd9a2a", "fontFamily": "junglefever", "fontSize": "35px" });
 		levelCompleteContainer.add(levelFinishedText);
 
 		// levelNo
-		const levelNo = this.add.text(964, 550, "", {});
+		const levelNo = this.add.text(964, 556, "", {});
 		levelNo.setOrigin(0.5, 0.5);
 		levelNo.text = "1";
 		levelNo.setStyle({ "color": "#524827", "fontFamily": "junglefever", "fontSize": "40px" });
@@ -176,7 +178,14 @@ class Level extends Phaser.Scene {
 		obstacle_1.visible = false;
 
 		// ball_Stage
-		this.add.image(340, 738, "Ball_Stage");
+		const ball_Stage = this.add.image(340, 738, "Ball_Stage");
+		ball_Stage.setInteractive(this.input.makePixelPerfect());
+
+		// musicBtn
+		const musicBtn = this.add.image(1853, 105, "Music_ON");
+
+		// soundBtn
+		const soundBtn = this.add.image(1857, 206, "Sound_ON");
 
 		// tap_to_con_ (components)
 		new ScaleUpDown(tap_to_con_);
@@ -185,12 +194,15 @@ class Level extends Phaser.Scene {
 		this.levelName = levelName;
 		this.sparkAnimation = sparkAnimation;
 		this.nextLevelbtn = nextLevelbtn;
+		this.homeBtn = homeBtn;
 		this.levelNo = levelNo;
 		this.sprakSprite = sprakSprite;
 		this.star1 = star1;
 		this.star2 = star2;
 		this.star3 = star3;
 		this.levelCompleteContainer = levelCompleteContainer;
+		this.musicBtn = musicBtn;
+		this.soundBtn = soundBtn;
 
 		this.events.emit("scene-awake");
 	}
@@ -203,6 +215,8 @@ class Level extends Phaser.Scene {
 	sparkAnimation;
 	/** @type {Phaser.GameObjects.Image} */
 	nextLevelbtn;
+	/** @type {Phaser.GameObjects.Image} */
+	homeBtn;
 	/** @type {Phaser.GameObjects.Text} */
 	levelNo;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -215,6 +229,10 @@ class Level extends Phaser.Scene {
 	star3;
 	/** @type {Phaser.GameObjects.Container} */
 	levelCompleteContainer;
+	/** @type {Phaser.GameObjects.Image} */
+	musicBtn;
+	/** @type {Phaser.GameObjects.Image} */
+	soundBtn;
 
 	/* START-USER-CODE */
 
@@ -233,14 +251,58 @@ class Level extends Phaser.Scene {
 		this.isDrag = false;
 
 		this.levelManager = new LevelManager(this);
+		this.tweenManager = new TweenManager(this);
+
+
+		this.input.keyboard.on('keydown-A', function () {
+			this.openFullscreen()
+		}, this);
 
 		this.createGameScene();
+	}
+
+	openFullscreen() {
+		const elem = document.getElementsByTagName("canvas")[0];
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.webkitRequestFullscreen) { /* Safari */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE11 */
+			elem.msRequestFullscreen();
+		}
+	}
+	addStars() {
+		this.star1 = this.add.image(960, 379, "Star");
+		this.levelCompleteContainer.add(this.star1);
+
+		// star2
+		this.star2 = this.add.image(858, 409, "Star");
+		this.star2.scaleX = 0.8;
+		this.star2.scaleY = 0.8;
+		this.star2.angle = -12.000000000000002;
+		this.levelCompleteContainer.add(this.star2);
+
+		// star3
+		this.star3 = this.add.image(1061, 407, "Star");
+		this.star3.scaleX = 0.8;
+		this.star3.scaleY = 0.8;
+		this.star3.angle = 14;
+		this.levelCompleteContainer.add(this.star3);
+
+		this.startArr = [this.star2, this.star1, this.star3];
+
+		for (let i = 0; i < this.startArr.length; i++) {
+			this.startArr[i].visible = false;
+			this.startArr[i].alpha = 0;
+			this.startArr[i].setScale((i == 1) ? 8 : 7);
+		}
 	}
 
 	createGameScene() {
 		this.gameOn = true;
 		this.levelName.setText(`Level ${this.level}`)
-		this.activateNextLevelbtn == false
+		this.activateNextLevelbtn = false
+		this.crashCount = 1;
 
 		if (this.level == 1) {
 			this.ball = this.matter.add.image(332, 646, "medicine-ball").setCircle(32)
@@ -255,7 +317,7 @@ class Level extends Phaser.Scene {
 			x: this.ball.x,
 			y: this.ball.y,
 			angle: { min: 0, max: 360 },
-			scale: { start: 0.8, end: 0 },
+			scale: { start: 0.7, end: 0 },
 			frequency: 1,
 			lifespan: 250,
 			tint: 0xffffff,
@@ -290,7 +352,8 @@ class Level extends Phaser.Scene {
 				this.bottomStickAngle = bottomAngle;
 
 
-				this.bucket = this.add.image(this.winObjStat.x, this.winObjStat.y, "Basket").setAngle(this.winObjStat.angle)
+				this.bucket = this.add.image(this.winObjStat.x, this.winObjStat.y, "Basket").setAngle(this.winObjStat.angle).setDepth(3)
+
 				if (this.levelManager.levels[levelId].obstacleCount > 0) {
 					for (let i = 1; i <= this.levelManager.levels[levelId].obstacleCount; i++) {
 						const obstacle = this.levelManager.levels[levelId].obstacleCoordinates[i];
@@ -321,6 +384,7 @@ class Level extends Phaser.Scene {
 		this.graphics = this.add.graphics({ lineStyle: { width: 2, color: 0x2266aa } });
 		this.arrowPath = new Phaser.Curves.Path(0, 0);
 		this.arrowPath.add(new Phaser.Curves.Ellipse(0, 0, 20, 20));
+
 
 		this.startArr = [this.star2, this.star1, this.star3];
 
@@ -358,7 +422,7 @@ class Level extends Phaser.Scene {
 			if (gameObject == this.ball && this.isDrag) {
 				this.updateTrajectory();
 				var angle = Phaser.Math.Angle.Between(this.ball.x, this.ball.y, dragX, dragY);
-				console.log(angle)
+				// console.log(angle)
 				if (this.passThrough) {
 					this.ball.passThrough = false
 				}
@@ -424,13 +488,15 @@ class Level extends Phaser.Scene {
 				this.ball.setStatic(true);
 				this.ball.setVelocity(0, 0)
 				this.ball.setInteractive();
-				if (this.ball.passedthrough == false) {
+				if (this.passThroughCoordinates) {
+					this.passThrough.destroy();
 					console.log("setting ball to false")
-					if (this.passThroughCoordinates) {
-						this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
-							.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
-							.setAngle(this.passThroughCoordinates.angle)
-					}
+					// if (this.passThroughCoordinates) {
+					this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
+						.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
+						.setAngle(this.passThroughCoordinates.angle)
+					// }
+					this.crashCount = 1
 					this.ball.passedthrough = false;
 				}
 				this.ball.setTexture("medicine-ball")
@@ -473,6 +539,12 @@ class Level extends Phaser.Scene {
 	}
 
 	addListeners() {
+		this.tweenManager.onHover(this.homeBtn)
+		this.tweenManager.onHover(this.nextLevelbtn)
+		this.tweenManager.onHover(this.replayBtn)
+		this.tweenManager.onHover(this.musicBtn)
+		this.tweenManager.onHover(this.soundBtn)
+
 		this.replayBtn.setInteractive().on("pointerdown", () => {
 			// this.count = true;
 			if (this.ball.x != 332 && this.ball.y != 646) {
@@ -487,11 +559,60 @@ class Level extends Phaser.Scene {
 						this.passThrough = this.add.sprite(this.passThroughCoordinates.x, this.passThroughCoordinates.y, "Barrier-1")
 							.setScale(this.passThroughCoordinates.scaleX, this.passThroughCoordinates.scaleY)
 							.setAngle(this.passThroughCoordinates.angle)
+						this.crashCount = 1
 					}
 				}
 				this.ball.setInteractive();
 				this.ball.setTexture("medicine-ball")
 			}
+		})
+
+		this.musicBtn.setInteractive().on("pointerdown", () => {
+			if (this.musicBtn.texture.key == "Music_ON") {
+				this.musicBtn.setTexture("Music_OFF");
+			}
+			else {
+				this.musicBtn.setTexture("Music_ON");
+			}
+		});
+		this.soundBtn.setInteractive().on("pointerdown", () => {
+			if (this.soundBtn.texture.key == "Sound_ON") {
+				this.soundBtn.setTexture("Sound_OFF");
+			}
+			else {
+				this.soundBtn.setTexture("Sound_ON");
+			}
+		});
+
+
+		this.homeBtn.setInteractive().on("pointerdown", () => {
+			// this.ball.destroy();
+			// for (let i = 0; i < this.startArr.length; i++) {
+			// 	this.startArr[i].destroy();
+			// }
+			// this.ball.visible = false;
+			// this.exploreEmitter.visble = false;
+			// if (this.activateNextLevelbtn == true) {
+			console.log("next level button clicked")
+			// this.activateNextLevelbtn == false
+			this.bucketLeft.destroy();
+			this.bucketRight.destroy();
+			this.bucketBottom.destroy();
+			this.bucket.destroy();
+			this.winObj.destroy();
+			if (this.levelManager.levels[this.level].obstacleCount) {
+				this.obstacleAray.forEach((obj) => {
+					obj.destroy();
+				})
+			}
+			this.ball.passedthrough = false;
+			this.level = 1;
+
+			this.scene.stop("Level")
+			this.scene.start("StartScene")
+			// this.createGameScene();
+			this.levelCompleteContainer.visible = false
+			this.isGameOn = true
 		})
 	}
 
@@ -508,7 +629,9 @@ class Level extends Phaser.Scene {
 	}
 
 	starFun() {
-		// console.log("hello")
+		if (this.level != 1) {
+			this.addStars();
+		}
 		this.nextLevelbtn.disableInteractive();
 		this.sprakSprite.visible = true;
 		for (let i = 0; i < this.startArr.length; i++) {
@@ -528,7 +651,7 @@ class Level extends Phaser.Scene {
 						this.tweens.add({
 							targets: this.startArr[i],
 							ease: 'Power3',
-							angle: { from: -270, to: -30 },
+							angle: { from: -360, to: 0 },
 							duration: 500,
 						});
 						if (i >= 2) {
@@ -548,7 +671,6 @@ class Level extends Phaser.Scene {
 
 
 	update() {
-		console.log(this.activateNextLevelbtn)
 		// console.log("ball pass through", this.ball.passThrough)
 		if (this.ball) {
 			this.checkBallOutsideOrInside()
@@ -563,11 +685,11 @@ class Level extends Phaser.Scene {
 				this.ball.passedthrough = true;
 				this.ball.setTexture("Sad_Ball")
 				this.sprakSprite.anims.play("Spark");
-				this.passThrough.anims.play("barrierAnim")
-					.on('complete', () => {
-						console.log("hello")
-						this.passThrough.visible = false;
-					});
+				if (this.crashCount = 1) {
+					this.crashCount++
+					this.passThrough.anims.play("barrierAnim")
+					console.log(this.crashCount)
+				}
 
 			}
 		}
@@ -587,39 +709,44 @@ class Level extends Phaser.Scene {
 				this.replayBtn.disableInteractive();
 				this.sprakSprite.visible = false;
 				this.levelCompleteContainer.visible = true
+				this.levelName.visible = false;
 				this.starFun();
 				//				// this.levelCompleteContainer.setScale(0, 0)
 				// this.visibleContainer();
 				this.levelCompleteContainer.setDepth(5);
 				this.levelNo.setText(this.level)
 				console.log("checking condition : ", this.activateNextLevelbtn == true)
-				if (this.activateNextLevelbtn == true) {
-					console.log("condition satified..")
-					this.nextLevelbtn.setInteractive().once("pointerup", () => {
-						// if (this.activateNextLevelbtn == true) {
-						console.log("next level button clicked")
-						// this.activateNextLevelbtn == false
-						this.bucketLeft.destroy();
-						this.bucketRight.destroy();
-						this.bucketBottom.destroy();
-						this.bucket.destroy();
-						this.winObj.destroy();
-						if (this.levelManager.levels[this.level].obstacleCount) {
-							this.obstacleAray.forEach((obj) => {
-								obj.destroy();
-							})
-						}
-						this.ball.passedthrough = false;
-						this.level += 1;
-						this.createGameScene();
-						this.ball.x = 332;
-						this.ball.y = 646;
-						this.levelCompleteContainer.visible = false
-						this.isGameOn = true
+				// if (this.activateNextLevelbtn == true) {
+				console.log("condition satified..")
+				this.nextLevelbtn.setInteractive().once("pointerup", () => {
+					for (let i = 0; i < this.startArr.length; i++) {
+						this.startArr[i].destroy();
+					}
+					// if (this.activateNextLevelbtn == true) {
+					console.log("next level button clicked")
+					// this.activateNextLevelbtn == false
+					this.bucketLeft.destroy();
+					this.bucketRight.destroy();
+					this.bucketBottom.destroy();
+					this.bucket.destroy();
+					this.winObj.destroy();
+					if (this.levelManager.levels[this.level].obstacleCount) {
+						this.obstacleAray.forEach((obj) => {
+							obj.destroy();
+						})
+					}
+					this.ball.passedthrough = false;
+					this.level += 1;
+					this.createGameScene();
+					this.ball.x = 332;
+					this.ball.y = 646;
+					this.levelCompleteContainer.visible = false
+					this.levelName.visible = true;
+					this.isGameOn = true
 
-						// }
-					})
-				}
+					// }
+				})
+				// }
 			} else if (this.passThroughCoordinates && this.ball.passedthrough == true && this.isGameOn == true) {
 				this.isGameOn = false
 				console.log("when the pass through is present ", this.ball)
@@ -628,41 +755,46 @@ class Level extends Phaser.Scene {
 				this.replayBtn.disableInteractive();
 				this.sprakSprite.visible = false;
 				this.levelCompleteContainer.visible = true
+				this.levelName.visible = false;
 				this.starFun();
 				//				// this.levelCompleteContainer.setScale(0, 0);
 				// this.visibleContainer();
 				this.levelCompleteContainer.setDepth(5);
 				this.levelNo.setText(this.level)
-				
-				if (this.activateNextLevelbtn == true) {
-					console.log("condition satified..")
-					this.nextLevelbtn.setInteractive().once("pointerup", () => {
-						// if(this.activateNextLevelbtn == true){
-						console.log("next level button clicked")
-						this.bucketLeft.destroy();
-						this.bucketRight.destroy();
-						this.bucketBottom.destroy();
-						this.bucket.destroy();
-						this.winObj.destroy();
-						if (this.levelManager.levels[this.level].obstacleCount) {
-							this.obstacleAray.forEach((obj) => {
-								obj.destroy();
-							})
-						}
-						if (this.levelManager.levels[this.level].passThrough) {
-							this.ball.passedthrough = false;
-							this.passThrough.destroy();
-							this.level += 1;
-						}
-						this.createGameScene();
-						this.ball.x = 332;
-						this.ball.y = 646;
-						this.ball.setTexture("medicine-ball")
-						this.levelCompleteContainer.visible = false
-						this.isGameOn = true
-						// }
-					});
-				}
+
+				// if (this.activateNextLevelbtn == true) {
+				console.log("condition satified..")
+				this.nextLevelbtn.setInteractive().once("pointerup", () => {
+					this.star1.destroy()
+					this.star2.destroy()
+					this.star3.destroy()
+					// if(this.activateNextLevelbtn == true){
+					console.log("next level button clicked")
+					this.bucketLeft.destroy();
+					this.bucketRight.destroy();
+					this.bucketBottom.destroy();
+					this.bucket.destroy();
+					this.winObj.destroy();
+					if (this.levelManager.levels[this.level].obstacleCount) {
+						this.obstacleAray.forEach((obj) => {
+							obj.destroy();
+						})
+					}
+					if (this.levelManager.levels[this.level].passThrough) {
+						this.ball.passedthrough = false;
+						this.passThrough.destroy();
+						this.level += 1;
+					}
+					this.createGameScene();
+					this.ball.x = 332;
+					this.ball.y = 646;
+					this.ball.setTexture("medicine-ball")
+					this.levelCompleteContainer.visible = false
+					this.levelName.visible = true;
+					this.isGameOn = true
+					// }
+				});
+				// }
 			} else {
 				// console.log("not going either both ", this.ball)
 			}

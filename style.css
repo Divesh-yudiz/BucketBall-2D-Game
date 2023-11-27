@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(assets/images/SplashScreen/BG.png);
+    background-image: url('./assets/images/SplashScreen/BG.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

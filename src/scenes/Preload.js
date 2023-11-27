@@ -32,6 +32,7 @@ class Preload extends Phaser.Scene {
 		// inside
 		const inside = this.add.image(462, 959, "Progressbar");
 		inside.setOrigin(0, 0.5);
+		inside.visible = false;
 
 		// logoSplash
 		this.add.image(960, 461, "logoSplash");
@@ -93,6 +94,29 @@ class Preload extends Phaser.Scene {
 
 		// loadingEmoji
 		const loadingEmoji = this.add.image(493, 961, "First_ball");
+		loadingEmoji.scaleX = 1.2;
+		loadingEmoji.scaleY = 1.2;
+
+		// happy_Ball
+		this.add.image(1448, -171, "happy_Ball");
+
+		// bucketBoundary
+		const bucketBoundary = this.add.image(643, 374, "bucketBoundary");
+		bucketBoundary.scaleX = 0.22;
+		bucketBoundary.angle = 78;
+		bucketBoundary.visible = false;
+
+		// bucketBoundary_1
+		const bucketBoundary_1 = this.add.image(712, 469, "bucketBoundary");
+		bucketBoundary_1.scaleX = 0.1;
+		bucketBoundary_1.angle = 1;
+		bucketBoundary_1.visible = false;
+
+		// bucketBoundary_2
+		const bucketBoundary_2 = this.add.image(779, 374, "bucketBoundary");
+		bucketBoundary_2.scaleX = 0.22;
+		bucketBoundary_2.angle = -78;
+		bucketBoundary_2.visible = false;
 
 		// startBtn (components)
 		new ScaleUpDown(startBtn);
@@ -190,34 +214,34 @@ class Preload extends Phaser.Scene {
 
 		const progressInterval = setInterval(updateProgressBar, intervalDuration);
 
-		this.graphics = this.add.graphics();
+		this.ball = this.matter.add.image(1448, -171, "happy_Ball").setCircle(40)
+		this.ball.setBounce(0.7)
+		this.ball.setInteractive();
+		this.ball.setDepth(2)
+		this.ball.setVelocity(-9.5, 0.5);
 
-		this.path = { t: 0, vec: new Phaser.Math.Vector2() };
+		this.obstacle = this.matter.add.image(1050, 300, "Progressbar_Base")
+			.setScale(0.5, 0.5)
+			.setAngle(0)
+			.setStatic(true);
+		this.obstacle.visible = false;
 
-		this.points = [
-			1894, -108,
-			1681, -226,
-			1408, -109,
-			1399, -27,
-			1143, 250,
-			1050, 141,
-			891, 101,
-			743, 235,
-			710, 405,
-			// 664, 264
-		];
-		this.image = this.add.sprite(this.points[0], this.points[1], 'happy_Ball');
-		this.image.setOrigin(0.5, 0.5); // Center the image at the point
 
-		this.curve = new Phaser.Curves.Spline(this.points);
-		this.curve.visible = false
-
-		this.tweens.add({
-			targets: this.path,
-			t: 1,
-			ease: 'Sine.easeInOut',
-			duration: 2000,
-		});
+		this.bucketLeft = this.matter.add.image(645, 396, 'bucketBoundary', null, {
+			shape: {
+				type: 'rectangle',
+			}
+		}).setScale(0.22, 1).setAngle(78).setStatic(true).setAlpha(0);
+		this.bucketRight = this.matter.add.image(773, 398, 'bucketBoundary', null, {
+			shape: {
+				type: 'rectangle',
+			}
+		}).setScale(0.22, 1).setAngle(-78).setStatic(true).setAlpha(0);;
+		this.bucketBottom = this.matter.add.image(709, 470, 'bucketBoundary', null, {
+			shape: {
+				type: 'rectangle',
+			}
+		}).setScale(0.1,1).setAngle(0).setStatic(true).setAlpha(0).setOrigin(1, 0.5);
 	}
 
 
@@ -228,16 +252,16 @@ class Preload extends Phaser.Scene {
 
 		}
 
-		this.graphics.clear();
+		// this.graphics.clear();
 
-		this.graphics.lineStyle(1, 0xffffff, 1);
+		// this.graphics.lineStyle(1, 0xffffff, 1);
 
-		this.graphics.fillStyle(0x00ff00, 1);
+		// this.graphics.fillStyle(0x00ff00, 1);
 
-		this.curve.getPoint(this.path.t, this.path.vec);
+		// this.curve.getPoint(this.path.t, this.path.vec);
 
-		this.image.x = this.path.vec.x;
-		this.image.y = this.path.vec.y;
+		// this.image.x = this.path.vec.x;
+		// this.image.y = this.path.vec.y;
 
 		const emojiX = this.inside.x + this.insideWidth * this.currentProgress;
 		const emojiY = this.loadingEmoji.y; // Keep the Y position the same as before

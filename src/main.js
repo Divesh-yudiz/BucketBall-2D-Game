@@ -14,7 +14,7 @@ const init = () => {
 			type: Phaser.AUTO,
 			// backgroundColor: "#242424",
 			transparent:true,
-			parent: "game-division",
+			// parent: "game-division",
 			scale: {
 				mode: Phaser.Scale.FIT,
 				autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -44,6 +44,7 @@ const init = () => {
 	
 	game.scene.add("Preload", Preload);
 	game.scene.add("Level", Level);
+	game.scene.add("StartScene", StartScene);
 	game.scene.add("Boot", Boot, true);
 };
 

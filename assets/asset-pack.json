@@ -212,6 +212,16 @@
                 "key": "Obstacle_2"
             },
             {
+                "url": "src/components/onHover.js",
+                "type": "script",
+                "key": "onHover"
+            },
+            {
+                "url": "src/components/onPointer.js",
+                "type": "script",
+                "key": "onPointer"
+            },
+            {
                 "url": "assets/images/particalesImg.png",
                 "type": "image",
                 "key": "particalesImg"
@@ -435,6 +445,11 @@
                 ],
                 "type": "audio",
                 "key": "transform"
+            },
+            {
+                "url": "src/scripts/TweenManager.js",
+                "type": "script",
+                "key": "TweenManager"
             },
             {
                 "url": "assets/images/ResultAssets/ui_base.png",

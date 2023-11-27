@@ -16,7 +16,6 @@
             "type": "Image",
             "id": "b51a92c2-2b8e-4785-ab1b-45dc3b9fb013",
             "label": "preview",
-            "components": [],
             "texture": {
                 "key": "preview"
             },
@@ -29,7 +28,6 @@
             "id": "0164a81e-1c59-4bac-93ee-fb980e9f1b80",
             "label": "loading_Outside",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "Progressbar_Base"
             },
@@ -41,19 +39,18 @@
             "id": "b18084f4-9f72-4973-8c4e-2d54f5dd0e15",
             "label": "inside",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "Progressbar"
             },
             "x": 462,
             "y": 959,
-            "originX": 0
+            "originX": 0,
+            "visible": false
         },
         {
             "type": "Image",
             "id": "a4fea25b-71c3-440b-850f-cc4cd837ac77",
             "label": "logoSplash",
-            "components": [],
             "texture": {
                 "key": "logoSplash"
             },
@@ -64,7 +61,6 @@
             "type": "Ellipse",
             "id": "3746cd32-0df0-4061-a0f1-a1e83dba830c",
             "label": "ellipse",
-            "components": [],
             "x": 1408,
             "y": -109,
             "visible": false,
@@ -76,7 +72,6 @@
             "type": "Ellipse",
             "id": "22aaf4fc-2f5d-44f0-8eb2-23da8a878bae",
             "label": "ellipse_2",
-            "components": [],
             "x": 1681,
             "y": -226,
             "visible": false,
@@ -88,7 +83,6 @@
             "type": "Ellipse",
             "id": "e20c35ae-1762-4ac1-9804-f39c22a91c96",
             "label": "ellipse_3",
-            "components": [],
             "x": 1244,
             "y": 122,
             "visible": false,
@@ -100,7 +94,6 @@
             "type": "Ellipse",
             "id": "c8e2245e-eb2a-4bd3-95ab-88119e444358",
             "label": "ellipse_4",
-            "components": [],
             "x": 1894,
             "y": -108,
             "visible": false,
@@ -112,7 +105,6 @@
             "type": "Ellipse",
             "id": "1eabbb8a-ec14-47af-82bd-293425f6df1b",
             "label": "ellipse_5",
-            "components": [],
             "x": 1143,
             "y": 250,
             "visible": false,
@@ -124,7 +116,6 @@
             "type": "Ellipse",
             "id": "860fc7ca-69f3-4822-b92e-7021dbaa918b",
             "label": "ellipse_6",
-            "components": [],
             "x": 1050,
             "y": 141,
             "visible": false,
@@ -136,7 +127,6 @@
             "type": "Ellipse",
             "id": "1aaeb0a1-bcf5-43c2-bc26-2f1f1f699e45",
             "label": "ellipse_8",
-            "components": [],
             "x": 891,
             "y": 101,
             "visible": false,
@@ -148,7 +138,6 @@
             "type": "Ellipse",
             "id": "634b33a5-3ff1-4ad7-b1de-f5ae9d458d92",
             "label": "ellipse_10",
-            "components": [],
             "x": 743.3419894538283,
             "y": 235.57375701783636,
             "visible": false,
@@ -160,7 +149,6 @@
             "type": "Ellipse",
             "id": "6bd2bf37-af6c-4437-9cc4-6788e85a061a",
             "label": "ellipse_12",
-            "components": [],
             "x": 710,
             "y": 405,
             "visible": false,
@@ -172,7 +160,6 @@
             "type": "Image",
             "id": "816c76e0-cbb2-4a7e-865a-739e85a514e4",
             "label": "sad_Ball",
-            "components": [],
             "texture": {
                 "key": "Sad_Ball"
             },
@@ -202,12 +189,62 @@
             "id": "ca30a187-8e68-45ff-86e0-2c339e54fac2",
             "label": "loadingEmoji",
             "scope": "CLASS",
-            "components": [],
             "texture": {
                 "key": "First_ball"
             },
             "x": 493,
-            "y": 961
+            "y": 961,
+            "scaleX": 1.2,
+            "scaleY": 1.2
+        },
+        {
+            "type": "Image",
+            "id": "cb2fc784-43f4-4579-8029-66162e778cf4",
+            "label": "happy_Ball",
+            "texture": {
+                "key": "happy_Ball"
+            },
+            "x": 1448,
+            "y": -171
+        },
+        {
+            "type": "Image",
+            "id": "9455e8b4-8a2d-4a78-8c1f-2b26bea99079",
+            "label": "bucketBoundary",
+            "texture": {
+                "key": "bucketBoundary"
+            },
+            "x": 643,
+            "y": 374,
+            "scaleX": 0.22,
+            "angle": 78,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "bfdf1ee5-304b-4746-8be5-3086d157bee0",
+            "label": "bucketBoundary_1",
+            "texture": {
+                "key": "bucketBoundary"
+            },
+            "x": 712,
+            "y": 469,
+            "scaleX": 0.1,
+            "angle": 1,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "4f2eaecb-8778-41cb-b8d9-370dc4791e3f",
+            "label": "bucketBoundary_2",
+            "texture": {
+                "key": "bucketBoundary"
+            },
+            "x": 779,
+            "y": 374,
+            "scaleX": 0.22,
+            "angle": -78,
+            "visible": false
         }
     ],
     "plainObjects": [],
@@ -215,6 +252,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

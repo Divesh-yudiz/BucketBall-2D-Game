@@ -41,7 +41,9 @@
                 "key": "Restart"
             },
             "x": 121,
-            "y": 97
+            "y": 97,
+            "scaleX": 0.9,
+            "scaleY": 0.9
         },
         {
             "type": "Image",
@@ -215,7 +217,8 @@
                 {
                     "type": "Image",
                     "id": "739fa0c7-98dc-43ab-b5ac-2a49314a309c",
-                    "label": "home_BTN",
+                    "label": "homeBtn",
+                    "scope": "CLASS",
                     "texture": {
                         "key": "Home_BTN"
                     },
@@ -233,7 +236,7 @@
                     "text": "Level Finished",
                     "align": "center",
                     "fontFamily": "junglefever",
-                    "fontSize": "25px",
+                    "fontSize": "35px",
                     "color": "#bd9a2a"
                 },
                 {
@@ -242,7 +245,7 @@
                     "label": "levelNo",
                     "scope": "CLASS",
                     "x": 964,
-                    "y": 550,
+                    "y": 556,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "1",
@@ -372,11 +375,34 @@
             "type": "Image",
             "id": "da02c351-44c5-4d08-9e98-56ebedc9390c",
             "label": "ball_Stage",
+            "hitArea.shape": "PIXEL_PERFECT",
             "texture": {
                 "key": "Ball_Stage"
             },
             "x": 340,
             "y": 738
+        },
+        {
+            "type": "Image",
+            "id": "c08b94f9-a82b-4ae7-aad6-2a05c84e0f77",
+            "label": "musicBtn",
+            "scope": "CLASS",
+            "texture": {
+                "key": "Music_ON"
+            },
+            "x": 1853,
+            "y": 105
+        },
+        {
+            "type": "Image",
+            "id": "568554bb-d203-4926-80e5-3a8a4e9c26b0",
+            "label": "soundBtn",
+            "scope": "CLASS",
+            "texture": {
+                "key": "Sound_ON"
+            },
+            "x": 1857,
+            "y": 206
         }
     ],
     "plainObjects": [],
