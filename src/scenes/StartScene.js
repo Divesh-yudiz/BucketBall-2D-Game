@@ -25,8 +25,8 @@ class StartScene extends Phaser.Scene {
 		// startBtn
 		const startBtn = this.add.text(960, 969, "", {});
 		startBtn.setOrigin(0.5, 0.5);
-		startBtn.text = "Tap to Start";
-		startBtn.setStyle({ "align": "center", "fontFamily": "junglefever", "fontSize": "40px" });
+		startBtn.text = "Start";
+		startBtn.setStyle({ "align": "center", "fontFamily": "junglefever", "fontSize": "60px" });
 
 		// bucketBoundary
 		const bucketBoundary = this.add.image(645, 394, "bucketBoundary");
@@ -48,6 +48,7 @@ class StartScene extends Phaser.Scene {
 
 		// startBtn (components)
 		new ScaleUpDown(startBtn);
+		new onPointer(startBtn);
 
 		this.startBtn = startBtn;
 

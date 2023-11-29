@@ -201,9 +201,12 @@ class Preload extends Phaser.Scene {
 			if (this.currentProgress >= 1) {
 				this.loading_Outside.visible = false;
 				this.inside.visible = false;
+				this.createBall()
 				this.startBtn.visible = true;
+				this.settingOnCurserPointer(this.startBtn)
 				this.loadingEmoji.visible = false
 				this.startBtn.setInteractive().on("pointerdown", () => {
+					document.body.style.cursor = 'default';
 					this.scene.stop("Preload");
 					this.scene.start("Level");
 				})
@@ -213,12 +216,6 @@ class Preload extends Phaser.Scene {
 		};
 
 		const progressInterval = setInterval(updateProgressBar, intervalDuration);
-
-		this.ball = this.matter.add.image(1448, -171, "happy_Ball").setCircle(40)
-		this.ball.setBounce(0.7)
-		this.ball.setInteractive();
-		this.ball.setDepth(2)
-		this.ball.setVelocity(-9.5, 0.5);
 
 		this.obstacle = this.matter.add.image(1050, 300, "Progressbar_Base")
 			.setScale(0.5, 0.5)
@@ -244,28 +241,34 @@ class Preload extends Phaser.Scene {
 		}).setScale(0.1,1).setAngle(0).setStatic(true).setAlpha(0).setOrigin(1, 0.5);
 	}
 
+	createBall(){
+		this.ball = this.matter.add.image(1448, -171, "happy_Ball").setCircle(40)
+		this.ball.setBounce(0.7)
+		this.ball.setInteractive();
+		this.ball.setDepth(2)
+		this.ball.setVelocity(-9.5, 0.5);
+	}
+
+	settingOnCurserPointer(gameObject){
+		gameObject.on('pointerover', function () {
+			document.body.style.cursor = 'pointer'; // Change cursor to pointer
+		});
+
+		// Restore default pointer when moving out of the sprite
+		gameObject.on('pointerout', function () {
+			document.body.style.cursor = 'default'; // Change cursor back to default
+		});
+	}
+
 
 
 	update() {
 		if (this.isGameLoaded1 && this.isGameLoaded2) {
 			// console.log("im full filled")
-
 		}
 
-		// this.graphics.clear();
-
-		// this.graphics.lineStyle(1, 0xffffff, 1);
-
-		// this.graphics.fillStyle(0x00ff00, 1);
-
-		// this.curve.getPoint(this.path.t, this.path.vec);
-
-		// this.image.x = this.path.vec.x;
-		// this.image.y = this.path.vec.y;
-
-		const emojiX = this.inside.x + this.insideWidth * this.currentProgress;
+		const emojiX = this.inside.x + this.insideWidth * this.currentProgress - 10;
 		const emojiY = this.loadingEmoji.y; // Keep the Y position the same as before
-
 		this.loadingEmoji.setPosition(emojiX, emojiY);
 	}
 

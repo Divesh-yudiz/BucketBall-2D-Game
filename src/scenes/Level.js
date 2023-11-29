@@ -16,8 +16,48 @@ class Level extends Phaser.Scene {
 	/** @returns {void} */
 	editorCreate() {
 
+		// game_play_bg
+		const game_play_bg = this.add.image(960, 540, "game_play_bg");
+		game_play_bg.visible = false;
+
 		// screenshot_2023_10_19_at_2_49_43_PM
-		this.add.image(960, 540, "Frame-");
+		const screenshot_2023_10_19_at_2_49_43_PM = this.add.image(960, 540, "Frame-");
+		screenshot_2023_10_19_at_2_49_43_PM.visible = false;
+
+		// backgroundContainer
+		const backgroundContainer = this.add.container(0, 0);
+
+		// top_left_box
+		const top_left_box = this.add.image(176, 150, "top_left_box");
+		backgroundContainer.add(top_left_box);
+
+		// top_Line
+		const top_Line = this.add.image(1055, 23, "top_Line");
+		backgroundContainer.add(top_Line);
+
+		// top_right_BOX
+		const top_right_BOX = this.add.image(1838, 177, "top_right_BOX");
+		backgroundContainer.add(top_right_BOX);
+
+		// right_line
+		const right_line = this.add.image(1883, 630, "right_line");
+		backgroundContainer.add(right_line);
+
+		// left_line
+		const left_line = this.add.image(18, 615, "left_line");
+		backgroundContainer.add(left_line);
+
+		// down_line
+		const down_line = this.add.image(822, 1052, "down_line");
+		backgroundContainer.add(down_line);
+
+		// down_left_Box
+		const down_left_Box = this.add.image(145, 1006, "down_left_Box");
+		backgroundContainer.add(down_left_Box);
+
+		// down_right_Box
+		const down_right_Box = this.add.image(1628, 1006, "down_right_Box");
+		backgroundContainer.add(down_right_Box);
 
 		// medicine_ball
 		const medicine_ball = this.add.image(332, 646, "medicine-ball");
@@ -33,57 +73,6 @@ class Level extends Phaser.Scene {
 		// basket
 		const basket = this.add.image(1432, 821, "Basket");
 		basket.visible = false;
-
-		// stick
-		const stick = this.add.image(1360, 828, "stick");
-		stick.scaleX = 0.35;
-		stick.scaleY = 0.19;
-		stick.angle = -11;
-		stick.visible = false;
-
-		// stick_1
-		const stick_1 = this.add.image(1503, 829, "stick");
-		stick_1.scaleX = 0.35;
-		stick_1.scaleY = 0.19;
-		stick_1.angle = 11;
-		stick_1.visible = false;
-
-		// stick_2
-		const stick_2 = this.add.image(1430, 910, "stick");
-		stick_2.scaleX = 0.35;
-		stick_2.scaleY = 0.1;
-		stick_2.angle = 90;
-		stick_2.setOrigin(1, 0.5);
-		stick_2.visible = false;
-
-		// barrier
-		const barrier = this.add.image(932, 410, "barrier2");
-		barrier.scaleX = 0.625;
-		barrier.scaleY = 0.37;
-		barrier.visible = false;
-
-		// rectangle_1
-		const rectangle_1 = this.add.rectangle(1137, 873, 50, 50);
-		rectangle_1.visible = false;
-		rectangle_1.isFilled = true;
-
-		// levelName
-		const levelName = this.add.text(960, 26, "", {});
-		levelName.setOrigin(0.5, 0.5);
-		levelName.text = "L e v e l  1";
-		levelName.setStyle({ "fontFamily": "junglefeverMain", "fontSize": "40px" });
-
-		// barrier_1
-		const barrier_1 = this.add.image(1657, 624, "barrier2");
-		barrier_1.scaleY = 0.365;
-		barrier_1.angle = -65.5;
-		barrier_1.visible = false;
-
-		// barrier_2
-		const barrier_2 = this.add.image(736, 877, "barrier2");
-		barrier_2.scaleY = 0.365;
-		barrier_2.angle = 90;
-		barrier_2.visible = false;
 
 		// levelCompleteContainer
 		const levelCompleteContainer = this.add.container(0, 0);
@@ -102,80 +91,53 @@ class Level extends Phaser.Scene {
 		levelCompleteContainer.add(sparkAnimation);
 
 		// ui_base
-		const ui_base = this.add.image(959, 560, "ui_base");
+		const ui_base = this.add.image(959, 495, "ui_base");
 		levelCompleteContainer.add(ui_base);
 
 		// nextLevelbtn
-		const nextLevelbtn = this.add.image(1050, 637, "Next_BTN");
+		const nextLevelbtn = this.add.image(1050, 572, "Next_BTN");
 		levelCompleteContainer.add(nextLevelbtn);
 
 		// homeBtn
-		const homeBtn = this.add.image(869, 637, "Home_BTN");
+		const homeBtn = this.add.image(869, 572, "Home_BTN");
 		levelCompleteContainer.add(homeBtn);
 
-		// levelFinishedText
-		const levelFinishedText = this.add.text(973, 500, "", {});
-		levelFinishedText.setOrigin(0.5, 0.5);
-		levelFinishedText.text = "Level Finished";
-		levelFinishedText.setStyle({ "align": "center", "color": "#bd9a2a", "fontFamily": "junglefever", "fontSize": "35px" });
-		levelCompleteContainer.add(levelFinishedText);
-
 		// levelNo
-		const levelNo = this.add.text(964, 556, "", {});
+		const levelNo = this.add.text(964, 491, "", {});
 		levelNo.setOrigin(0.5, 0.5);
 		levelNo.text = "1";
 		levelNo.setStyle({ "color": "#524827", "fontFamily": "junglefever", "fontSize": "40px" });
 		levelCompleteContainer.add(levelNo);
 
 		// sprakSprite
-		const sprakSprite = this.add.sprite(862, 413, "sprakSprite", 0);
+		const sprakSprite = this.add.sprite(862, 348, "sprakSprite", 0);
 		levelCompleteContainer.add(sprakSprite);
 
 		// star1
-		const star1 = this.add.image(960, 379, "Star");
+		const star1 = this.add.image(960, 314, "Star");
 		levelCompleteContainer.add(star1);
 
 		// star2
-		const star2 = this.add.image(858, 409, "Star");
+		const star2 = this.add.image(858, 344, "Star");
 		star2.scaleX = 0.8;
 		star2.scaleY = 0.8;
 		star2.angle = -12.000000000000002;
 		levelCompleteContainer.add(star2);
 
 		// star3
-		const star3 = this.add.image(1061, 407, "Star");
+		const star3 = this.add.image(1061, 342, "Star");
 		star3.scaleX = 0.8;
 		star3.scaleY = 0.8;
 		star3.angle = 14;
 		levelCompleteContainer.add(star3);
 
 		// level_Completed
-		const level_Completed = this.add.image(942, 263, "Level-Completed");
+		const level_Completed = this.add.image(942, 804, "Level-Completed");
 		levelCompleteContainer.add(level_Completed);
 
-		// tap_to_con_
-		const tap_to_con_ = this.add.image(960, 806, "tap_to_con.");
-		levelCompleteContainer.add(tap_to_con_);
-
-		// obstacle_2
-		const obstacle_2 = this.add.image(2107, 737, "Obstacle_2");
-		obstacle_2.scaleX = 1.2;
-		obstacle_2.scaleY = 1.65;
-		obstacle_2.angle = 34;
-		obstacle_2.visible = false;
-
-		// obstacle
-		const obstacle = this.add.image(821, 759, "Obstacle_2");
-		obstacle.scaleX = 1.2;
-		obstacle.scaleY = 1.05;
-		obstacle.visible = false;
-
-		// obstacle_1
-		const obstacle_1 = this.add.image(1665, 511, "Obstacle_1");
-		obstacle_1.scaleX = 1.5;
-		obstacle_1.scaleY = 1.2;
-		obstacle_1.angle = 24.000000000000004;
-		obstacle_1.visible = false;
+		// level_finished
+		const level_finished = this.add.image(973, 441, "level-finished");
+		levelCompleteContainer.add(level_finished);
 
 		// ball_Stage
 		const ball_Stage = this.add.image(340, 738, "Ball_Stage");
@@ -187,11 +149,39 @@ class Level extends Phaser.Scene {
 		// soundBtn
 		const soundBtn = this.add.image(1857, 206, "Sound_ON");
 
-		// tap_to_con_ (components)
-		new ScaleUpDown(tap_to_con_);
+		// levelName
+		const levelName = this.add.image(860, 29, "L1");
 
+		// lifeContainer
+		const lifeContainer = this.add.container(0, 0);
+
+		// medicine_ball_1
+		const medicine_ball_1 = this.add.image(1060, 26, "medicine-ball");
+		medicine_ball_1.scaleX = 0.5;
+		medicine_ball_1.scaleY = 0.5;
+		lifeContainer.add(medicine_ball_1);
+
+		// ball_life
+		const ball_life = this.add.image(1107, 27, "ball_life3");
+		lifeContainer.add(ball_life);
+
+		// replayBtn (components)
+		new onPointer(replayBtn);
+
+		// nextLevelbtn (components)
+		new onPointer(nextLevelbtn);
+
+		// homeBtn (components)
+		new onPointer(homeBtn);
+
+		// musicBtn (components)
+		new onPointer(musicBtn);
+
+		// soundBtn (components)
+		new onPointer(soundBtn);
+
+		this.backgroundContainer = backgroundContainer;
 		this.replayBtn = replayBtn;
-		this.levelName = levelName;
 		this.sparkAnimation = sparkAnimation;
 		this.nextLevelbtn = nextLevelbtn;
 		this.homeBtn = homeBtn;
@@ -203,14 +193,18 @@ class Level extends Phaser.Scene {
 		this.levelCompleteContainer = levelCompleteContainer;
 		this.musicBtn = musicBtn;
 		this.soundBtn = soundBtn;
+		this.levelName = levelName;
+		this.medicine_ball_1 = medicine_ball_1;
+		this.ball_life = ball_life;
+		this.lifeContainer = lifeContainer;
 
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Phaser.GameObjects.Container} */
+	backgroundContainer;
 	/** @type {Phaser.GameObjects.Image} */
 	replayBtn;
-	/** @type {Phaser.GameObjects.Text} */
-	levelName;
 	/** @type {Phaser.GameObjects.Rectangle} */
 	sparkAnimation;
 	/** @type {Phaser.GameObjects.Image} */
@@ -233,6 +227,14 @@ class Level extends Phaser.Scene {
 	musicBtn;
 	/** @type {Phaser.GameObjects.Image} */
 	soundBtn;
+	/** @type {Phaser.GameObjects.Image} */
+	levelName;
+	/** @type {Phaser.GameObjects.Image} */
+	medicine_ball_1;
+	/** @type {Phaser.GameObjects.Image} */
+	ball_life;
+	/** @type {Phaser.GameObjects.Container} */
+	lifeContainer;
 
 	/* START-USER-CODE */
 
@@ -243,6 +245,7 @@ class Level extends Phaser.Scene {
 	gameOn = true
 	obstacleAray = [];
 	isObjectInCanvas = true;
+	life = 3;
 
 	create() {
 
@@ -272,18 +275,18 @@ class Level extends Phaser.Scene {
 		}
 	}
 	addStars() {
-		this.star1 = this.add.image(960, 379, "Star");
+		this.star1 = this.add.image(960, 314, "Star");
 		this.levelCompleteContainer.add(this.star1);
 
 		// star2
-		this.star2 = this.add.image(858, 409, "Star");
+		this.star2 = this.add.image(858, 344, "Star");
 		this.star2.scaleX = 0.8;
 		this.star2.scaleY = 0.8;
 		this.star2.angle = -12.000000000000002;
 		this.levelCompleteContainer.add(this.star2);
 
 		// star3
-		this.star3 = this.add.image(1061, 407, "Star");
+		this.star3 = this.add.image(1061, 342, "Star");
 		this.star3.scaleX = 0.8;
 		this.star3.scaleY = 0.8;
 		this.star3.angle = 14;
@@ -300,16 +303,21 @@ class Level extends Phaser.Scene {
 
 	createGameScene() {
 		this.gameOn = true;
-		this.levelName.setText(`Level ${this.level}`)
+		this.levelName.setTexture(`L${this.level}`)
 		this.activateNextLevelbtn = false
+		this.lifeContainer.visible = true
 		this.crashCount = 1;
+		this.life = 3
 
 		if (this.level == 1) {
-			this.ball = this.matter.add.image(332, 646, "medicine-ball").setCircle(32)
+			this.ball = this.matter.add.image(332, 646, "ball").setCircle(32)
 			this.ball.setBounce(1, 20)
 			this.ball.setInteractive();
 			this.ball.setDepth(2)
+			this.ballCover = this.add.image(332, 646, "Warried").setDepth(10)
 		}
+
+
 
 		this.ballParticles = this.add.particles('particalesImg');
 
@@ -469,7 +477,7 @@ class Level extends Phaser.Scene {
 			}
 		}).setScale(0.35, 0.1).setAngle(this.bottomStickAngle).setStatic(true).setAlpha(0).setOrigin(1, 0.5);
 
-		this.winObj = this.add.rectangle(this.winObjStat.x, this.winObjStat.y, 50, 50);
+		this.winObj = this.add.rectangle(this.winObjStat.x, this.winObjStat.y, 80, 80, 2);
 		this.winObj.isFilled = false;
 
 		// this.bucket = this.add.image(this.winObjStat.x, this.winObjStat.y,"Basket").setAngle(-30) 
@@ -483,6 +491,28 @@ class Level extends Phaser.Scene {
 		) {
 			if (this.isObjectInCanvas) {
 				this.isObjectInCanvas = false;
+				this.life -= 1;
+				this.ball_life.setTexture(`ball_life${this.life}`)
+				if (this.life == 0) {
+					this.bucketLeft.destroy();
+					this.bucketRight.destroy();
+					this.bucketBottom.destroy();
+					this.bucket.destroy();
+					this.winObj.destroy();
+					if (this.levelManager.levels[this.level].obstacleCount) {
+						this.obstacleAray.forEach((obj) => {
+							obj.destroy();
+						})
+					}
+					this.ball.passedthrough = false;
+					this.level = 1;
+
+					this.scene.stop("Level")
+					this.scene.start("StartScene")
+					// this.createGameScene();
+					this.levelCompleteContainer.visible = false
+					this.isGameOn = true
+				}
 				this.ball.x = 332;
 				this.ball.y = 646;
 				this.ball.setStatic(true);
@@ -499,7 +529,7 @@ class Level extends Phaser.Scene {
 					this.crashCount = 1
 					this.ball.passedthrough = false;
 				}
-				this.ball.setTexture("medicine-ball")
+				this.ballCover.setTexture("Warried")
 			}
 		} else {
 			this.isObjectInCanvas = true;
@@ -550,6 +580,28 @@ class Level extends Phaser.Scene {
 			if (this.ball.x != 332 && this.ball.y != 646) {
 				this.ball.x = 332;
 				this.ball.y = 646;
+				this.life -= 1;
+				if (this.life == 0) {
+					this.bucketLeft.destroy();
+					this.bucketRight.destroy();
+					this.bucketBottom.destroy();
+					this.bucket.destroy();
+					this.winObj.destroy();
+					if (this.levelManager.levels[this.level].obstacleCount) {
+						this.obstacleAray.forEach((obj) => {
+							obj.destroy();
+						})
+					}
+					this.ball.passedthrough = false;
+					this.level = 1;
+
+					this.scene.stop("Level")
+					this.scene.start("StartScene")
+					// this.createGameScene();
+					this.levelCompleteContainer.visible = false
+					this.isGameOn = true
+				}
+				this.ball_life.setTexture(`ball_life${this.life}`)
 				this.ball.setStatic(true);
 				this.ball.setVelocity(0, 0)
 				this.count = false
@@ -586,15 +638,6 @@ class Level extends Phaser.Scene {
 
 
 		this.homeBtn.setInteractive().on("pointerdown", () => {
-			// this.ball.destroy();
-			// for (let i = 0; i < this.startArr.length; i++) {
-			// 	this.startArr[i].destroy();
-			// }
-			// this.ball.visible = false;
-			// this.exploreEmitter.visble = false;
-			// if (this.activateNextLevelbtn == true) {
-			console.log("next level button clicked")
-			// this.activateNextLevelbtn == false
 			this.bucketLeft.destroy();
 			this.bucketRight.destroy();
 			this.bucketBottom.destroy();
@@ -614,6 +657,15 @@ class Level extends Phaser.Scene {
 			this.levelCompleteContainer.visible = false
 			this.isGameOn = true
 		})
+
+		this.ball.on('pointerover', function () {
+			document.body.style.cursor = 'pointer'; // Change cursor to pointer
+		});
+
+		// Restore default pointer when moving out of the sprite
+		this.ball.on('pointerout', function () {
+			document.body.style.cursor = 'default'; // Change cursor back to default
+		});
 	}
 
 	explodPrticle() {
@@ -657,20 +709,18 @@ class Level extends Phaser.Scene {
 						if (i >= 2) {
 							console.log("button activated after star animation")
 							this.activateNextLevelbtn = true
+							this.nextLevelbtn.setInteractive();
 						}
 					}
 				});
 			}, 500 * (i + 1));
 		}
-
-		// 
-		// function moveStar(obj){
-
-		// }
 	}
 
 
 	update() {
+		 this.ballCover.x = this.ball.x 
+		 this.ballCover.y = this.ball.y 
 		// console.log("ball pass through", this.ball.passThrough)
 		if (this.ball) {
 			this.checkBallOutsideOrInside()
@@ -683,11 +733,11 @@ class Level extends Phaser.Scene {
 			if (Phaser.Geom.Intersects.CircleToRectangle(circleBounds, rectangleBounds)) {
 				// Handle collision
 				this.ball.passedthrough = true;
-				this.ball.setTexture("Sad_Ball")
+				this.ballCover.setTexture("HAppy")
 				this.sprakSprite.anims.play("Spark");
 				if (this.crashCount = 1) {
 					this.crashCount++
-					this.passThrough.anims.play("barrierAnim")
+					this.passThrough.anims.play("breakBreakAnim")
 					console.log(this.crashCount)
 				}
 
@@ -703,28 +753,24 @@ class Level extends Phaser.Scene {
 
 		if (Phaser.Geom.Intersects.CircleToRectangle(circleBounds, winObj)) {
 			if (!this.passThroughCoordinates && this.isGameOn == true) {
+				console.log("collided")
+				this.ballCover.setTexture("HAppy")
 				this.isGameOn = false
 				this.ball.setVelocity(0, 0)
 				this.explodPrticle();
-				this.replayBtn.disableInteractive();
 				this.sprakSprite.visible = false;
+				this.replayBtn.disableInteractive();
 				this.levelCompleteContainer.visible = true
 				this.levelName.visible = false;
+				this.lifeContainer.visible = false;
 				this.starFun();
-				//				// this.levelCompleteContainer.setScale(0, 0)
-				// this.visibleContainer();
 				this.levelCompleteContainer.setDepth(5);
 				this.levelNo.setText(this.level)
-				console.log("checking condition : ", this.activateNextLevelbtn == true)
-				// if (this.activateNextLevelbtn == true) {
-				console.log("condition satified..")
-				this.nextLevelbtn.setInteractive().once("pointerup", () => {
+				this.nextLevelbtn.once("pointerup", () => {
 					for (let i = 0; i < this.startArr.length; i++) {
 						this.startArr[i].destroy();
 					}
-					// if (this.activateNextLevelbtn == true) {
 					console.log("next level button clicked")
-					// this.activateNextLevelbtn == false
 					this.bucketLeft.destroy();
 					this.bucketRight.destroy();
 					this.bucketBottom.destroy();
@@ -737,6 +783,9 @@ class Level extends Phaser.Scene {
 					}
 					this.ball.passedthrough = false;
 					this.level += 1;
+					this.life = 3
+					this.ball_life.setTexture(`ball_life${this.life}`)
+					this.ballCover.setTexture("Warried")
 					this.createGameScene();
 					this.ball.x = 332;
 					this.ball.y = 646;
@@ -748,7 +797,9 @@ class Level extends Phaser.Scene {
 				})
 				// }
 			} else if (this.passThroughCoordinates && this.ball.passedthrough == true && this.isGameOn == true) {
+				console.log("collided")
 				this.isGameOn = false
+				this.ballCover.setTexture("HAppy")
 				console.log("when the pass through is present ", this.ball)
 				this.ball.setVelocity(0, 0)
 				this.explodPrticle();
@@ -756,6 +807,7 @@ class Level extends Phaser.Scene {
 				this.sprakSprite.visible = false;
 				this.levelCompleteContainer.visible = true
 				this.levelName.visible = false;
+				this.lifeContainer.visible = false
 				this.starFun();
 				//				// this.levelCompleteContainer.setScale(0, 0);
 				// this.visibleContainer();
@@ -764,7 +816,7 @@ class Level extends Phaser.Scene {
 
 				// if (this.activateNextLevelbtn == true) {
 				console.log("condition satified..")
-				this.nextLevelbtn.setInteractive().once("pointerup", () => {
+				this.nextLevelbtn.once("pointerup", () => {
 					this.star1.destroy()
 					this.star2.destroy()
 					this.star3.destroy()
@@ -784,11 +836,14 @@ class Level extends Phaser.Scene {
 						this.ball.passedthrough = false;
 						this.passThrough.destroy();
 						this.level += 1;
+						this.life = 3
+						this.ball_life.setTexture(`ball_life${this.life}`)
 					}
+					this.ballCover.setTexture("Warried")
 					this.createGameScene();
 					this.ball.x = 332;
 					this.ball.y = 646;
-					this.ball.setTexture("medicine-ball")
+					// this.ball.setTexture("medicine-ball")
 					this.levelCompleteContainer.visible = false
 					this.levelName.visible = true;
 					this.isGameOn = true

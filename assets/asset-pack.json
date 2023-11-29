@@ -2,26 +2,6 @@
     "section1": {
         "files": [
             {
-                "url": "assets/images/Gameplay/bubbles/1.png",
-                "type": "image",
-                "key": "1"
-            },
-            {
-                "url": "assets/images/Gameplay/bubbles/2.png",
-                "type": "image",
-                "key": "2"
-            },
-            {
-                "url": "assets/images/Gameplay/bubbles/3.png",
-                "type": "image",
-                "key": "3"
-            },
-            {
-                "url": "assets/images/Gameplay/bubbles/4.png",
-                "type": "image",
-                "key": "4"
-            },
-            {
                 "url": "assets/images/background.jpg",
                 "type": "image",
                 "key": "background"
@@ -30,6 +10,26 @@
                 "url": "assets/images/background2.jpg",
                 "type": "image",
                 "key": "background2"
+            },
+            {
+                "url": "assets/images/Ball/ball.png",
+                "type": "image",
+                "key": "ball"
+            },
+            {
+                "url": "assets/images/level/ball_life1.png",
+                "type": "image",
+                "key": "ball_life1"
+            },
+            {
+                "url": "assets/images/level/ball_life2.png",
+                "type": "image",
+                "key": "ball_life2"
+            },
+            {
+                "url": "assets/images/level/ball_life3.png",
+                "type": "image",
+                "key": "ball_life3"
             },
             {
                 "url": "assets/images/Gameplay/Ball_Stage.png",
@@ -75,6 +75,11 @@
                 "url": "assets/images/Barrier/Barrier-7.png",
                 "type": "image",
                 "key": "Barrier-7"
+            },
+            {
+                "url": "assets/images/Barrier/Barrier-8.png",
+                "type": "image",
+                "key": "Barrier-8"
             },
             {
                 "url": "assets/images/pngwing.com (8) (2).png",
@@ -125,14 +130,44 @@
                 "key": "congratsPng"
             },
             {
+                "url": "assets/images/Static Backround /down_left_Box.png",
+                "type": "image",
+                "key": "down_left_Box"
+            },
+            {
+                "url": "assets/images/Static Backround /down_line.png",
+                "type": "image",
+                "key": "down_line"
+            },
+            {
+                "url": "assets/images/Static Backround /down_right_Box.png",
+                "type": "image",
+                "key": "down_right_Box"
+            },
+            {
+                "url": "assets/images/Ball/Fear.png",
+                "type": "image",
+                "key": "Fear"
+            },
+            {
                 "url": "assets/images/Frame-.png",
                 "type": "image",
                 "key": "Frame-"
             },
             {
+                "url": "assets/images/game_play_bg.png",
+                "type": "image",
+                "key": "game_play_bg"
+            },
+            {
                 "url": "src/scripts/GameManager.js",
                 "type": "script",
                 "key": "GameManager"
+            },
+            {
+                "url": "assets/images/Ball/HAppy.png",
+                "type": "image",
+                "key": "HAppy"
             },
             {
                 "url": "assets/images/ResultAssets/Home_BTN.png",
@@ -157,6 +192,136 @@
                 "key": "junglefeverMain"
             },
             {
+                "url": "assets/images/level/L1.png",
+                "type": "image",
+                "key": "L1"
+            },
+            {
+                "url": "assets/images/level/L10.png",
+                "type": "image",
+                "key": "L10"
+            },
+            {
+                "url": "assets/images/level/L11.png",
+                "type": "image",
+                "key": "L11"
+            },
+            {
+                "url": "assets/images/level/L12.png",
+                "type": "image",
+                "key": "L12"
+            },
+            {
+                "url": "assets/images/level/L13.png",
+                "type": "image",
+                "key": "L13"
+            },
+            {
+                "url": "assets/images/level/L14.png",
+                "type": "image",
+                "key": "L14"
+            },
+            {
+                "url": "assets/images/level/L15.png",
+                "type": "image",
+                "key": "L15"
+            },
+            {
+                "url": "assets/images/level/L16.png",
+                "type": "image",
+                "key": "L16"
+            },
+            {
+                "url": "assets/images/level/L17.png",
+                "type": "image",
+                "key": "L17"
+            },
+            {
+                "url": "assets/images/level/L18.png",
+                "type": "image",
+                "key": "L18"
+            },
+            {
+                "url": "assets/images/level/L19.png",
+                "type": "image",
+                "key": "L19"
+            },
+            {
+                "url": "assets/images/level/L2.png",
+                "type": "image",
+                "key": "L2"
+            },
+            {
+                "url": "assets/images/level/L20.png",
+                "type": "image",
+                "key": "L20"
+            },
+            {
+                "url": "assets/images/level/L21.png",
+                "type": "image",
+                "key": "L21"
+            },
+            {
+                "url": "assets/images/level/L22.png",
+                "type": "image",
+                "key": "L22"
+            },
+            {
+                "url": "assets/images/level/L23.png",
+                "type": "image",
+                "key": "L23"
+            },
+            {
+                "url": "assets/images/level/L24.png",
+                "type": "image",
+                "key": "L24"
+            },
+            {
+                "url": "assets/images/level/L25.png",
+                "type": "image",
+                "key": "L25"
+            },
+            {
+                "url": "assets/images/level/L3.png",
+                "type": "image",
+                "key": "L3"
+            },
+            {
+                "url": "assets/images/level/L4.png",
+                "type": "image",
+                "key": "L4"
+            },
+            {
+                "url": "assets/images/level/L5.png",
+                "type": "image",
+                "key": "L5"
+            },
+            {
+                "url": "assets/images/level/L6.png",
+                "type": "image",
+                "key": "L6"
+            },
+            {
+                "url": "assets/images/level/L7.png",
+                "type": "image",
+                "key": "L7"
+            },
+            {
+                "url": "assets/images/level/L8.png",
+                "type": "image",
+                "key": "L8"
+            },
+            {
+                "url": "assets/images/level/L9.png",
+                "type": "image",
+                "key": "L9"
+            },
+            {
+                "url": "assets/images/Static Backround /left_line.png",
+                "type": "image",
+                "key": "left_line"
+            },
+            {
                 "url": "assets/images/ResultAssets/level-complete.png",
                 "type": "image",
                 "key": "level-complete"
@@ -165,6 +330,11 @@
                 "url": "assets/images/ResultAssets/Level-Completed.png",
                 "type": "image",
                 "key": "Level-Completed"
+            },
+            {
+                "url": "assets/images/ResultAssets/level-finished.png",
+                "type": "image",
+                "key": "level-finished"
             },
             {
                 "url": "src/scripts/LevelManager.js",
@@ -257,134 +427,14 @@
                 "key": "Restart"
             },
             {
+                "url": "assets/images/Static Backround /right_line.png",
+                "type": "image",
+                "key": "right_line"
+            },
+            {
                 "url": "assets/images/Gameplay/Sad_Ball.png",
                 "type": "image",
                 "key": "Sad_Ball"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.49.43 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.49.43 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.50.17 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.50.17 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.51.01 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.51.01 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.51.38 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.51.38 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.51.57 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.51.57 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.52.15 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.52.15 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.57.27 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.57.27 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.57.44 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.57.44 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.58.27 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.58.27 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-19 at 2.58.55 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-19 at 2.58.55 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.45.53 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.45.53 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.46.32 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.46.32 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.46.54 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.46.54 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.47.08 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.47.08 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.47.18 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.47.18 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-23 at 4.47.35 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-23 at 4.47.35 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.45.42 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.45.42 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.47.06 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.47.06 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.47.17 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.47.17 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.47.26 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.47.26 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.47.37 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.47.37 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-25 at 2.48.11 PM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-25 at 2.48.11 PM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-26 at 10.44.11 AM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-26 at 10.44.11 AM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-26 at 10.44.20 AM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-26 at 10.44.20 AM"
-            },
-            {
-                "url": "assets/images/Screenshot 2023-10-26 at 10.44.37 AM.png",
-                "type": "image",
-                "key": "Screenshot 2023-10-26 at 10.44.37 AM"
             },
             {
                 "url": "src/scripts/SocketManager.js",
@@ -440,6 +490,21 @@
                 "key": "tap_to_con."
             },
             {
+                "url": "assets/images/Static Backround /top_left_box.png",
+                "type": "image",
+                "key": "top_left_box"
+            },
+            {
+                "url": "assets/images/Static Backround /top_Line.png",
+                "type": "image",
+                "key": "top_Line"
+            },
+            {
+                "url": "assets/images/Static Backround /top_right_BOX.png",
+                "type": "image",
+                "key": "top_right_BOX"
+            },
+            {
                 "url": [
                     "assets/sounds/transform.mp3"
                 ],
@@ -455,6 +520,11 @@
                 "url": "assets/images/ResultAssets/ui_base.png",
                 "type": "image",
                 "key": "ui_base"
+            },
+            {
+                "url": "assets/images/Ball/Warried.png",
+                "type": "image",
+                "key": "Warried"
             }
         ]
     },

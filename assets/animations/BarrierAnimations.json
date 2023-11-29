@@ -8,6 +8,29 @@
                     "key": "Barrier-1",
                     "duration": 0,
                     "keyframe": false
+                }
+            ],
+            "frameRate": 10,
+            "skipMissedFrames": true,
+            "showBeforeDelay": false
+        },
+        {
+            "key": "afterBreak",
+            "type": "frame",
+            "frames": [],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "showBeforeDelay": false
+        },
+        {
+            "key": "breakBreakAnim",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Barrier-1",
+                    "duration": 0,
+                    "keyframe": false
                 },
                 {
                     "key": "Barrier-2",
@@ -36,6 +59,11 @@
                 },
                 {
                     "key": "Barrier-7",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Barrier-8",
                     "duration": 0,
                     "keyframe": false
                 }

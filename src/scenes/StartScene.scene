@@ -35,16 +35,17 @@
             "label": "startBtn",
             "scope": "CLASS",
             "components": [
-                "ScaleUpDown"
+                "ScaleUpDown",
+                "onPointer"
             ],
             "x": 960,
             "y": 969,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "Tap to Start",
+            "text": "Start",
             "align": "center",
             "fontFamily": "junglefever",
-            "fontSize": "40px"
+            "fontSize": "60px"
         },
         {
             "type": "Image",
